@@ -3,7 +3,7 @@ module.exports = {
 		title: `Irrelevant Blog`,
 		description: `A blog containing my personal insights as I delve into the dark depths of the programming world`,
 		author: `@C-Sinclair`,
-		siteUrl: 'blog.irrelevant.ninja'
+		url: 'blog.irrelevant.ninja'
 	},
 	plugins: [
 		`gatsby-plugin-netlify`,
