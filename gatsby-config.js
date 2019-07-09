@@ -14,7 +14,7 @@ module.exports = {
 			options: {
 				name: `images`,
 				path: `${__dirname}/src/images`
-			},
+			}
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
@@ -34,22 +34,27 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/ninja.png`, // This path is relative to the root of the site.
-			},
+				icon: `src/images/ninja.png` // This path is relative to the root of the site.
+			}
 		},
 		`gatsby-plugin-catch-links`,
 		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
-				plugins: [{
-					resolve: `gatsby-remark-images`,
-					options: {
-						maxWidth: 800,
-						wrapperStyle: fluidResult => `flex:${_.round(fluidResult.aspectRatio, 2)}`
+				plugins: [
+					{
+						resolve: `gatsby-remark-images`,
+						options: {
+							maxWidth: 800,
+							wrapperStyle: fluidResult =>
+								`flex:${_.round(
+									fluidResult.aspectRatio,
+									2
+								)}`
+						}
 					}
-				}]
+				]
 			}
-		},
-		`gatsby-plugin-robots-txt`
+		}
 	]
 }
