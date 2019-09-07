@@ -2,9 +2,14 @@
 
 A Gatsby JS static blog built from `markdown` files, hosted on netlify.
 
-### Colour pallete 
+### Colour pallete
+
 Light Blue #60CEE2
 Blue #6189D9
-Purple *Main* #72148C
+Purple _Main_ #72148C
 Burgundy #4D1951
 Dark Navy #210759
+
+### Ideas
+
+Build a ninja fighting in svg, or maybe 4 static positions which are looped through

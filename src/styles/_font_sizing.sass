@@ -28,20 +28,8 @@
         .f6-#{ $breakpoint-name }
             font-size: $fs6
 
-@function font-size-lock(
-    $min-font-size,
-    $max-font-size,
-    $min-screen-width,
-    $max-screen-width
-)
-    @return calc(
-        #{ $min-font-size } + 
-        (
-            ( #{ strip-units($max-font-size) } - #{ strip-units($min-font-size) } ) * 
-            ( 100vw - #{ $min-screen-width } ) / 
-            ( #{ strip-units($max-screen-width) } - #{ strip-units($min-screen-width) } )
-        )
-    )
+@function font-size-lock ( $min-font-size, $max-font-size, $min-screen-width, $max-screen-width )
+    @return calc( #{ $min-font-size } + (( #{ strip-units($max-font-size) } - #{ strip-units($min-font-size) } ) * ( 100vw - #{ $min-screen-width } ) / ( #{ strip-units($max-screen-width) } - #{ strip-units($min-screen-width) } )))
 
 @function strip-units($number)
     @if type-of($number) == 'number' and not unitless($number)
