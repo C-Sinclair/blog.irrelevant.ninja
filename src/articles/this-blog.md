@@ -1,7 +1,7 @@
 ---
-path: '/this-blog'
+path: '/creation'
 date: '05-07-2019'
-title: 'The building of this blog'
+title: 'Building a Gatsby blog'
 author: 'Conor Sinclair'
 featuredImage: ../images/daan-stevens-9z0V7KuvPgo-unsplash.jpg
 ---
