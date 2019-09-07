@@ -5,14 +5,32 @@
     
 body
     background: $darkest
+    @include all-text-white
+    font-family: $default-font
 
 header 
-    background: $primary
+    background: $darkest
     display: flex
-    padding: 10px
-    @include all-text-white
+    padding: 4px 10px
+    height: 70px
+    position: fixed
 
-    > .title a 
-        display: flex
+    .title a 
+        position: relative
+
+        h1 
+            font-family: $handwritten
+            transform: rotate(-20deg)
+            padding-top: 30px
+            font-size: $fs2
+            color: $gold
+            @include neon-shadow
+        
+        span
+            position: absolute
+            bottom: -60px
+            left: 120px
+            font-size: $fs6
+
     
 

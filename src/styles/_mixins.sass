@@ -1,3 +1,5 @@
+@import 'variables'
+    
 @mixin text-white 
     color: #ffffff
 
@@ -6,3 +8,5 @@
         #{ $node }
             @include text-white
             
+@mixin neon-shadow
+    text-shadow: .1vw 0vw .25vw $light, .1vw 0vw .3vw $light, .1vw 0vw .4vw $light, .1vw 0vw .5vw $light, .1vw 0vw .7vw $primary, .1vw 0vw .7vw $primary, .1vw 0vw 1vw $primary, .1vw 0vw 1vw $primary 
