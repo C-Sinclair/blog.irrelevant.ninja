@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { Icon } from '@blueprintjs/core'
 
 export default function Template({ data }) {
 	const article = data.markdownRemark
@@ -10,15 +11,15 @@ export default function Template({ data }) {
 		<Layout>
 			<SEO title="Articles" />
 			<article>
-				<Link to="/blog">Back</Link>
-				<p>{article.frontmatter.date}</p>
+				<Link to="/blog" className="back">
+					<Icon icon="step-backward" />
+				</Link>
 				<h1>{article.frontmatter.title}</h1>
+				<p className="date">{article.frontmatter.date}</p>
 				<h6>By {article.frontmatter.author}</h6>
 				<Img
-					fluid={
-						article.frontmatter.featuredImage.childImageSharp
-							.fluid
-					}
+					className="full"
+					fluid={article.frontmatter.featuredImage.childImageSharp.fluid}
 				/>
 				<div dangerouslySetInnerHTML={{ __html: article.html }} />
 			</article>

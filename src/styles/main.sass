@@ -2,18 +2,29 @@
 @import 'variables'
 @import 'mixins'
 @import 'font_sizing'
+@import "~normalize.css"
+@import "~@blueprintjs/core/lib/css/blueprint.css"
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css"
     
 body
     background: $darkest
     @include all-text-white
     font-family: $default-font
+    transition: all 0.5s ease 
+
+body.light
+    background: #ffffff
+    @include all-text-dark
 
 header 
     background: $darkest
     display: flex
     padding: 4px 10px
-    height: 70px
+    height: 100px
     position: fixed
+    width: 100%
+    justify-content: space-between
+    z-index: 1
 
     .title a 
         position: relative
@@ -28,9 +39,36 @@ header
         
         span
             position: absolute
-            bottom: -60px
+            bottom: -80px
             left: 120px
             font-size: $fs6
 
-    
+main
+    padding-top: 120px
+    z-index: 2
 
+.back
+    border-radius: 50px
+    color: #ffffff
+    &::before
+        border: solid 1px #ffffff
+
+.light .back
+    &::before
+        border: solid 1px $dark
+
+.light header
+    background: #ffffff
+
+    span 
+        color: $dark
+
+article
+    padding: 0px 20px
+
+    .full
+        margin-left: -20px
+        width: calc(100% + 40px)
+
+    p.date
+        text-align: right

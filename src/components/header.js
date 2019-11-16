@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
+import ThemeButton from './themeButton'
 
 const Header = () => (
 	<header>
@@ -14,6 +15,7 @@ const Header = () => (
 				<span>Blog</span>
 			</Link>
 		</div>
+		<ThemeButton />
 	</header>
 )
 
