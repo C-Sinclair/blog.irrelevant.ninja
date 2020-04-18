@@ -48,6 +48,9 @@ body.light
     .content
         height: 30%
 
+    @media (max-width: #{$b3})
+        display: none
+
     footer
         align-self: center
 
@@ -56,6 +59,16 @@ img#profile
     width: 100px
     height: 100px
     border: 3px solid $gold
+
+#logo
+    position: relative
+    font-size: 25px
+
+    #blogName
+        position: absolute
+        top: 60px
+        margin-left: 95px 
+        color: $gold
 
 main
     width: 70vw
@@ -70,21 +83,8 @@ main
     .wrap
         padding: 25px 50px
 
-.back
-    border-radius: 50px
-    color: #ffffff
-    &::before
-        border: solid 1px #ffffff
-
-.light .back
-    &::before
-        border: solid 1px $dark
-
-.light header
-    background: #ffffff
-
-    span 
-        color: $dark
+    @media (max-width: #{$b3})
+        width: 100vw
 
 #articles
     list-style: katakana-iroha
@@ -107,12 +107,6 @@ article
 
     p.date
         text-align: right
-
-#blogName
-    position: absolute
-    top: 35px
-    right: 32%
-    color: $gold
 
 #tags
     ol
