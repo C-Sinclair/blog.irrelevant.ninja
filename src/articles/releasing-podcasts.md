@@ -1,9 +1,11 @@
 ---
-path: '/podcasting'
+path: '/a/podcasting'
 date: '07-09-2019'
+shortTitle: 'Podcasting'
 title: 'How to release a podcast'
 author: 'Conor Sinclair'
 featuredImage: ../images/matt-botsford-OKLqGsCT8qs-unsplash.jpg
+tags: ["Podcast", "XML", "S3", "AWS"]
 ---
 
 # Releasing a podcast

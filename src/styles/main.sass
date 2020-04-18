@@ -5,47 +5,70 @@
 @import "~normalize.css"
 @import "~@blueprintjs/core/lib/css/blueprint.css"
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css"
-    
+
+a
+    text-decoration: none
+
 body
     background: $darkest
     @include all-text-white
     font-family: $default-font
     transition: all 0.5s ease 
+    overflow: hidden
+    height: 100vh
+    width: 100vw
 
 body.light
     background: #ffffff
     @include all-text-dark
 
-header 
-    background: $darkest
+#root
     display: flex
-    padding: 4px 10px
-    height: 100px
-    position: fixed
-    width: 100%
+
+#sidebar
+    width: 30vw
+    min-width: 250px
+    height: 100vh
+    padding: 25px
+    display: flex
+    flex-direction: column
     justify-content: space-between
-    z-index: 1
+    background: $primary
 
-    .title a 
-        position: relative
+    .profile
+        display: flex
+        flex-direction: column
+        align-items: center
 
-        h1 
-            font-family: $handwritten
-            transform: rotate(-20deg)
-            padding-top: 30px
-            font-size: $fs2
-            color: $gold
-            @include neon-shadow
-        
-        span
-            position: absolute
-            bottom: -80px
-            left: 120px
-            font-size: $fs6
+        p 
+            background: $dark
+            padding: 10px
+            border-radius: 2px
+
+    .content
+        height: 30%
+
+    footer
+        align-self: center
+
+img#profile
+    border-radius: 100px
+    width: 100px
+    height: 100px
+    border: 3px solid $gold
 
 main
-    padding-top: 120px
-    z-index: 2
+    width: 70vw
+    height: 100vh
+    overflow-y: scroll
+    background: $darkest
+
+    header
+        text-align: center
+        position: relative
+
+    .wrap
+        padding: 25px 50px
 
 .back
     border-radius: 50px
@@ -63,6 +86,18 @@ main
     span 
         color: $dark
 
+#articles
+    list-style: katakana-iroha
+    padding: 0 25px
+
+    li
+        margin: 10px
+        padding: 25px
+        cursor: pointer
+        border-radius: 2px
+        &:hover
+            border: 1px solid $light
+
 article
     padding: 0px 20px
 
@@ -72,3 +107,37 @@ article
 
     p.date
         text-align: right
+
+#blogName
+    position: absolute
+    top: 35px
+    right: 32%
+    color: $gold
+
+#tags
+    ol
+        display: flex
+        margin: 0
+        flex-wrap: wrap
+
+    .tag
+        display: flex
+        border-radius: 2px
+        background: $dark
+        margin: 10px 5px
+        height: 12px
+        font-weight: 500
+        align-items: center
+        &:hover
+            background: $lightest
+
+    .selected
+        background: green
+
+    .count
+        border-radius: 20px
+        background: $light
+        width: 20px
+        height: 20px
+        text-align: center
+        margin-left: 5px

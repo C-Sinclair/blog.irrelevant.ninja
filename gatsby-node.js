@@ -15,6 +15,7 @@ exports.createPages = ({boundActionCreators, graphql}) => {
                             author
                             path
                             title
+                            shortTitle
                         }
                     }
                 }

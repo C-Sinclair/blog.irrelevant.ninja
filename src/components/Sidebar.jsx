@@ -1,19 +1,26 @@
 import React from 'react'
 import { Breadcrumbs } from '@blueprintjs/core'
 import { Link } from 'gatsby'
+import Profile from './Profile'
 
-const Sidebar = () => {
+const Sidebar = ({ children, crumb = []}) => {
     
     const crumbs = [
         { href: '/', icon: 'home' },
+        ...crumb
     ]
 
     return (
         <nav id="sidebar">
             <Breadcrumbs items={crumbs} />
-            <Profile />
-            <p>Conor Sinclair</p>
-            <p>A software developer of high esteem</p>
+            <a className="profile" href="https://c.sinclair.software">
+                <Profile />
+                <h4>Conor Sinclair</h4>
+                <p>A Software Developer of high esteem</p>
+            </a>
+            <div className="content">
+                { children }
+            </div>
 			<footer>
 				<Link to="/contact/">Get in contact</Link>
 			</footer>

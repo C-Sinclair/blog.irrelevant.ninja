@@ -1,21 +1,10 @@
 import React from 'react'
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import conor from '../images/conor.svg'
 
 const Profile = () => {
-    const data = useStaticQuery(graphql`
-      query {
-        profileImage: file(relativePath: { eq: "conor.svg" }) {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `)
-  
-    return <Img fluid={data.placeholderImage.childImageSharp.fluid}/>
+    return (
+        <img src={conor} id="profile" />
+    )
 }
 
 export default Profile

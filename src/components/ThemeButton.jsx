@@ -17,7 +17,7 @@ const ThemeButton = () => {
 			checked={isDarkTheme}
 			label="Dark Theme"
 			onChange={() => setDarkTheme(!isDarkTheme)}
-		></Switch>
+		/>
 	)
 }
 
