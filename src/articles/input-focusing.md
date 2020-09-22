@@ -1,6 +1,6 @@
 ---
 path: '/a/input-focusing'
-date: '09-04-2020'
+date: '04-09-2020'
 shortTitle: 'Input Focusing'
 title: 'Focusing on inputs in React'
 author: 'Conor Sinclair'
@@ -17,7 +17,7 @@ Focusing the user onto an input is usually pretty simple
 document.querySelector("input").focus()
 ```
 
-However in React you need a reference to this element as it may change over time. This is done with the `ref` prop. 
+However in React you need a reference to this element as it may change over time. This is done with the `ref` prop.
 
 ```javascript
 // inside a React functional component
