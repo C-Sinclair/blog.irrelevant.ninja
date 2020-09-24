@@ -2,7 +2,7 @@ const path = require('path')
 
 exports.createPages = ({boundActionCreators, graphql}) => {
     const { createPage } = boundActionCreators
-    const articleTemplate = path.resolve('src/templates/article.js')
+    const articleTemplate = path.resolve('src/templates/article.jsx')
     return graphql(`
         {
             allMarkdownRemark {
