@@ -11,7 +11,7 @@ const IndexPage = () => (
 			<Logo />
 		</header>
 		<div className="wrap">
-			<p>Check out the archived of tech articles:</p>
+			<p>Check out the archive of tech articles:</p>
 		</div>
 		<Articles />
 	</Layout>

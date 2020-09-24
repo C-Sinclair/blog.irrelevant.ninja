@@ -13,7 +13,7 @@ body
     background: $darkest
     @include all-text-white
     font-family: $default-font
-    transition: all 0.5s ease 
+    transition: all 0.5s ease
     overflow: hidden
     height: 100vh
     width: 100vw
@@ -40,7 +40,7 @@ body.light
         flex-direction: column
         align-items: center
 
-        p 
+        p
             background: $dark
             padding: 10px
             border-radius: 2px
@@ -51,8 +51,16 @@ body.light
     @media (max-width: #{$b3})
         display: none
 
+    svg
+        color: #fff
+
+    .bp3-breadcrumb-current
+        color: #fff
+
     footer
         align-self: center
+        a
+          color: #fff
 
 img#profile
     border-radius: 100px
@@ -67,7 +75,7 @@ img#profile
     #blogName
         position: absolute
         top: 60px
-        margin-left: 95px 
+        margin-left: 95px
         color: $gold
 
 main
@@ -109,6 +117,8 @@ article
         text-align: right
 
 #tags
+    background: $dark
+
     ol
         display: flex
         margin: 0
@@ -135,3 +145,19 @@ article
         height: 20px
         text-align: center
         margin-left: 5px
+
+
+blockquote
+  margin: 20px 0
+  padding: 10px
+  background: $dark
+
+pre
+  background: $dark
+
+code
+  background: $dark
+  color: #fff
+
+li
+  color: #fff
