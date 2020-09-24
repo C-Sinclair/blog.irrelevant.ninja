@@ -4,12 +4,13 @@ import Img from 'gatsby-image'
 import format from 'date-fns/format'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
+import {Tooltip, Icon, Position} from '@blueprintjs/core'
 
 export default function Template({ data }) {
 	const article = data.markdownRemark
 	const { frontmatter: {
-		title, 
-		date, 
+		title,
+		date,
 		featuredImage,
 		shortTitle
 	}} = article
@@ -27,8 +28,12 @@ export default function Template({ data }) {
 			<article>
 				<header>
 					<h1>{title}</h1>
+                    <span className='date'>
+                        <Tooltip content={formattedDate} position={Position.BOTTOM}>
+                            <Icon icon='calendar' />
+                        </Tooltip>
+                    </span>
 				</header>
-				<p className="date">{formattedDate}</p>
 				<Img
 					className="full"
 					fluid={featuredImage.childImageSharp.fluid}

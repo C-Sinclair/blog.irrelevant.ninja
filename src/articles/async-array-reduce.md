@@ -4,7 +4,7 @@ date: '09-22-2020'
 shortTitle: 'Async Array Reduce'
 title: 'Asynchronous Array Reduce'
 author: 'Conor Sinclair'
-featuredImage: ../images/victor-barrios-yjygDnvRuaI-unsplash.jpg
+featuredImage: ../images/imani-vDQ-e3RtaoE-unsplash.jp
 tags: ["Javascript"]
 ---
 

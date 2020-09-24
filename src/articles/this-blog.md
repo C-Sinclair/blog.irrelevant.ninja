@@ -8,7 +8,7 @@ featuredImage: ../images/daan-stevens-9z0V7KuvPgo-unsplash.jpg
 tags: ["Gatsby", "Javascript", "React"]
 ---
 
-_aka the making of this site and how I learned to love the static_
+> _aka the making of this site and how I learned to love static_
 
 The term static website is a pretty hot topic at the moment in the world of web development. Honestly I didn't really get it. Why would devs want to go back to creating boring `html` pages, when there's been an explosion of dynamic, reactive technologies in the field? Creating this blog has convinced me of their power.
 
