@@ -7,7 +7,6 @@ const { palette, fonts, gradients } = theme
 const {
   dark,
   darkest,
-  light,
   gold
 } = palette
 
@@ -33,10 +32,6 @@ body {
   width: 100vw;
 }
 
-#root {
-  display: flex;
-}
-
 p {
   color: #fff;
   font-size: 0.8em;
@@ -59,6 +54,9 @@ main {
   height: 100vh;
   overflow-y: scroll;
   background: ${darkest};
+  @media (max-width: 950px) {
+    width: calc(100vw - 100px);
+  }
 }
 
 header {

@@ -5,7 +5,7 @@ import { TagContext } from '../hooks'
 import { Global } from '@emotion/core'
 import { globalStyles, theme } from '../styles'
 import { ThemeProvider } from 'emotion-theming'
-// import '../styles/main.sass'
+import styled from '@emotion/styled'
 
 export const Layout = ({ children, tags = false }) => {
 	const data = useStaticQuery(graphql`
@@ -24,13 +24,17 @@ export const Layout = ({ children, tags = false }) => {
 		<ThemeProvider theme={theme}>
 			<TagContext.Provider value={{ selectedTags, setSelectedTags }}>
 				<Global styles={globalStyles} />
-				<div id="root">
+				<Root>
 					<Sidebar title={data.site.siteMetadata.title}>
 						{tags && <Tags />}
 					</Sidebar>
 					<main>{children}</main>
-				</div>
+				</Root>
 			</TagContext.Provider>
 		</ThemeProvider>
 	)
 }
+
+const Root = styled.div`
+	display: flex;
+`

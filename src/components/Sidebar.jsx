@@ -18,9 +18,9 @@ export const Sidebar = ({ children }) => {
       <Content>
         {children}
       </Content>
-      <footer>
+      <Footer>
         <Link to="/contact/">Get in contact</Link>
-      </footer>
+      </Footer>
     </Nav>
   )
 }
@@ -34,6 +34,12 @@ const Nav = styled.nav`
   flex-direction: column;
   justify-content: space-between;
   background: ${({ theme }) => theme.palette.primary};
+  transition: all 0.4s ease;
+  @media (max-width: 950px) {
+    width: 50px;
+    min-width: 50px;
+    background: ${({ theme }) => theme.palette.darkest};
+  } 
 `
 
 const Home = styled(Link)`
@@ -55,9 +61,22 @@ const ProfileContainer = styled.a`
     border-radius: 2px;
     font-size: 0.7em;
   }
+
+  @media (max-width: 950px) {
+    opacity: 0;
+  }
 `
 
 const Content = styled.div`
   height: 30%;
   position: relative;
+  @media (max-width: 950px) {
+    opacity: 0;
+  }
+`
+
+const Footer = styled.footer`
+  @media (max-width: 950px) {
+    opacity: 0;
+  }
 `
