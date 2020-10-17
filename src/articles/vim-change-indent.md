@@ -6,6 +6,7 @@ shortTitle: 'Quick Vim Indent Change'
 author: 'Conor Sinclair'
 featuredImage: ../images/rostyslav-savchyn-TDV1i2f7rcc-unsplash.jpg
 tags: ["Vim"]
+emoji: '🔱'
 ---
 
 > Vim, I need indentation changed and I need it quick!

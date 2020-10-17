@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Sidebar from './Sidebar'
-import { TagContext } from '../hooks/useTags'
-import Tags from './Tags'
-import '../styles/main.sass'
+import { Sidebar, Tags } from '.'
+import { TagContext } from '../hooks'
+import { Global } from '@emotion/core'
+import { globalStyles, theme } from '../styles'
+import { ThemeProvider } from 'emotion-theming'
+// import '../styles/main.sass'
 
-const Layout = ({ children, crumb, tags = false }) => {
+export const Layout = ({ children, tags = false }) => {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -16,18 +18,19 @@ const Layout = ({ children, crumb, tags = false }) => {
 		}
 	`)
 
-	const [ selectedTags, setSelectedTags ] = useState([])
+	const [selectedTags, setSelectedTags] = useState([])
 
 	return (
-		<TagContext.Provider value={{ selectedTags, setSelectedTags }}>
-			<div id="root">
-				<Sidebar title={data.site.siteMetadata.title} crumb={crumb}>
-					{ tags && <Tags /> }
-				</Sidebar>
-				<main>{children}</main>
-			</div>
-		</TagContext.Provider>
+		<ThemeProvider theme={theme}>
+			<TagContext.Provider value={{ selectedTags, setSelectedTags }}>
+				<Global styles={globalStyles} />
+				<div id="root">
+					<Sidebar title={data.site.siteMetadata.title}>
+						{tags && <Tags />}
+					</Sidebar>
+					<main>{children}</main>
+				</div>
+			</TagContext.Provider>
+		</ThemeProvider>
 	)
 }
-
-export default Layout

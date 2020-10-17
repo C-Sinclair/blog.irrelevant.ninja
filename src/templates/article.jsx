@@ -2,9 +2,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import format from 'date-fns/format'
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
-import {Tooltip, Icon, Position} from '@blueprintjs/core'
+import { Layout, SEO } from '../components'
+import styled from '@emotion/styled'
+import { VscCalendar } from 'react-icons/vsc'
 
 export default function Template({ data }) {
   const article = data.markdownRemark
@@ -12,37 +12,50 @@ export default function Template({ data }) {
     title,
     date,
     featuredImage,
-    shortTitle
-  }} = article
-
-  const crumb = [
-    { href: '/articles', icon: 'book', text: 'Articles' },
-    { icon: 'bookmark', text: shortTitle }
-  ]
+    emoji
+  } } = article
 
   const formattedDate = format(new Date(date), "do MMMM yyyy")
 
   return (
-    <Layout crumb={crumb}>
+    <Layout>
       <SEO title="Articles" />
       <article>
         <header>
+          <Emoji>{emoji}</Emoji>
           <h1>{title}</h1>
-          <span className='date'>
-            <Tooltip content={formattedDate} position={Position.BOTTOM}>
-              <Icon icon='calendar' />
-            </Tooltip>
-          </span>
+          <DateContainer title={formattedDate}>
+            <VscCalendar />
+          </DateContainer>
         </header>
-        <Img
-          className="full"
-          fluid={featuredImage.childImageSharp.fluid}
+        <BannerImage fullWidth fluid={featuredImage.childImageSharp.fluid}
         />
         <div dangerouslySetInnerHTML={{ __html: article.html }} />
       </article>
     </Layout>
   )
 }
+
+const Emoji = styled.div`
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-size: 1.5em;
+`
+
+const DateContainer = styled.div`
+  position: absolute;
+  right: 0;
+  top: 10px;
+  cursor: help; 
+`
+
+const BannerImage = styled(Img)(({ fullWidth }) => `
+  ${fullWidth && `
+    margin-left: -20px;
+    width: calc(100% + 40px);
+  `}
+`)
 
 export const postQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -52,7 +65,7 @@ export const postQuery = graphql`
         title
         author
         date
-        shortTitle
+        emoji
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 800) {

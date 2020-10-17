@@ -37,6 +37,14 @@ module.exports = {
 				icon: `src/images/ninja.png` // This path is relative to the root of the site.
 			}
 		},
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /\.svg$/,
+				},
+			},
+		},
 		`gatsby-plugin-catch-links`,
 		{
 			resolve: `gatsby-transformer-remark`,

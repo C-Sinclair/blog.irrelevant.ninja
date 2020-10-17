@@ -6,6 +6,7 @@ title: 'Asynchronous Array Reduce'
 author: 'Conor Sinclair'
 featuredImage: ../images/imani-vDQ-e3RtaoE-unsplash.jpg
 tags: ["Javascript"]
+emoji: '🍳'
 ---
 
 > Handling async actions in a reduce function
@@ -24,7 +25,7 @@ And the star of the show, `Array.reduce`
 
 So since we need a single list to be returned which could be smaller than the original list we are passing in, the best array function to use is `reduce`.
 
-For a detailed breakdown of how the reduce function works, check out [Flattening nested objects](https://blog.irrelevant.ninja/flat-nested-objects)
+For a detailed breakdown of how the reduce function works, check out [Flattening nested objects](https://blog.irrelevant.ninja/a/flattening-nested-objects)
 
 Typically the `reduce` function takes a synchronous function as its first argument, and we might pass in an empty version of the data structure we want to receive as the reduce function's output. So we might think something along the lines of the below would be a good solution to our problem.
 

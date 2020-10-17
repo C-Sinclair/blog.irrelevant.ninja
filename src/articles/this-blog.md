@@ -6,6 +6,7 @@ shortTitle: 'Creation'
 author: 'Conor Sinclair'
 featuredImage: ../images/daan-stevens-9z0V7KuvPgo-unsplash.jpg
 tags: ["Gatsby", "Javascript", "React"]
+emoji: '✏'
 ---
 
 > _aka the making of this site and how I learned to love static_

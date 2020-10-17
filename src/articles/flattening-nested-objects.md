@@ -6,9 +6,10 @@ title: 'Flattening Nested Objects'
 author: 'Conor Sinclair'
 featuredImage: ../images/leroy-evans-_P-hKe5H_o4-unsplash.jpg
 tags: ["Javascript"]
+emoji: '🐦'
 ---
 
-> When your object has nested objected, sometimes you just need to flatten that s\*\*t down!
+> When your object has nested objects, sometimes you just need to flatten that s\*\*t down!
 
 ### Problem
 

@@ -1,10 +1,17 @@
+import styled from '@emotion/styled'
 import React from 'react'
-import conor from '../images/conor.svg'
+import SvgMe from '../images/conor.svg'
 
-const Profile = () => {
+export const Profile = () => {
     return (
-        <img src={conor} id="profile" />
+        <Conor />
     )
 }
 
-export default Profile
+const Conor = styled(SvgMe)`
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    border: 3px solid ${({ theme }) => theme.palette.gold};   
+`
