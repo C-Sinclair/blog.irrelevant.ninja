@@ -1,52 +1,35 @@
 {
-  "name": "blog",
-  "description": "A Gatsby blog",
-  "version": "0.0.1",
-  "author": "Conor Sinclair <conor@irrelevantbeats.com>",
-  "dependencies": {
-    "@blueprintjs/core": "^3.17.2",
-    "@emotion/core": "^10.0.35",
-    "@emotion/styled": "^10.0.27",
-    "axios": "^0.19.0",
-    "emotion-theming": "^10.0.27",
-    "gatsby": "^2.20.24",
-    "gatsby-image": "^2.2.4",
-    "gatsby-plugin-manifest": "^2.2.1",
-    "gatsby-plugin-offline": "^2.2.1",
-    "gatsby-plugin-react-helmet": "^3.1.0",
-    "gatsby-plugin-react-svg": "^3.0.0",
-    "gatsby-plugin-sharp": "^2.2.2",
-    "gatsby-source-filesystem": "^2.1.2",
-    "gatsby-transformer-sharp": "^2.2.1",
-    "ramda": "^0.27.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1",
-    "react-icons": "^3.11.0"
-  },
-  "devDependencies": {
-    "gatsby-plugin-catch-links": "^2.1.0",
-    "gatsby-plugin-netlify": "^2.1.0",
-    "gatsby-plugin-robots-txt": "^1.4.0",
-    "gatsby-plugin-sass": "^2.1.0",
-    "gatsby-remark-images": "^3.1.3",
-    "gatsby-transformer-remark": "^2.6.0",
-    "node-sass": "^4.12.0",
-    "prettier": "^1.18.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "yarn develop",
-    "serve": "gatsby serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/C-Sinclair/blog"
-  }
+	"name": "blog",
+	"description": "My tech blog",
+	"version": "0.2.1",
+	"author": "Conor Sinclair <conor@sinclair.software>",
+	"keywords": [
+		"svelte",
+		"ESM",
+		"blog",
+		"badass"
+	],
+	"license": "MIT",
+	"scripts": {
+		"start": "snowpack dev",
+		"build": "snowpack build",
+		"test": "web-test-runner \"src/**/*.test.js\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/C-Sinclair/blog"
+	},
+	"dependencies": {
+		"mdsvex": "^0.8.9",
+		"svelte": "^3.32.3"
+	},
+	"devDependencies": {
+		"@snowpack/plugin-dotenv": "^2.0.5",
+		"@snowpack/plugin-svelte": "^3.5.0",
+		"@snowpack/web-test-runner-plugin": "^0.2.0",
+		"@testing-library/svelte": "^3.0.0",
+		"@web/test-runner": "^0.12.0",
+		"chai": "^4.2.0",
+		"snowpack": "^3.0.1"
+	}
 }

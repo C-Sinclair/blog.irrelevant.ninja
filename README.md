@@ -1,6 +1,16 @@
 # Irrelevant Blog
 
-A Gatsby JS static blog built from `markdown` files, hosted on netlify.
+> Rewrite time!
+
+Time for a rewrite. Gatsby is _HEAVY_ let's use a nice light Svelte flavoured version!
+
+## Hosting
+
+- [ ] Netlify. The boss.
+
+## Monitoring
+
+- [ ] Sentry
 
 ### Colour pallete
 
@@ -13,3 +23,7 @@ Dark Navy #210759
 ### Ideas
 
 Build a ninja fighting in svg, or maybe 4 static positions which are looped through
+
+### Errors
+
+- Podcasting article doesnt escape the XML
