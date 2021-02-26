@@ -10,6 +10,13 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script type="module" src="{{JS}}"></script>
+    <script type="module">
+      import comp from './{{COMP}}'
+
+      let app = new comp({
+        target: document.body,
+        hydrate: true
+      })
+    </script>
   </body>
 </html>
