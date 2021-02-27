@@ -5,18 +5,10 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Web site created using create-snowpack-app" />
-    <title>{{TITLE}}</title>
-    <link rel="stylesheet" href="{{CSS}}" />
+    <title>Dev Mode!</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script type="module">
-      import comp from './{{COMP}}'
-
-      let app = new comp({
-        target: document.body,
-        hydrate: true
-      })
-    </script>
+    <script type="module" src="/dev-runtime.js"></script>
   </body>
 </html>

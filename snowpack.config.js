@@ -4,7 +4,7 @@
 module.exports = {
 	mount: {
 		public: { url: '/', static: true },
-		src: { url: '/dist' }
+		src: { url: '/' }
 	},
 	plugins: [
 		// [
@@ -17,10 +17,7 @@ module.exports = {
 		'@snowpack/plugin-dotenv',
 		['snowsvex-plugin', { pagesDirs: ['pages', 'articles'] }]
 	],
-	routes: [
-		/* Example: Enable an SPA Fallback in development: */
-		// {"match": "routes", "src": ".*", "dest": "/index.html"},
-	],
+	routes: [{ match: 'routes', src: '.*', dest: '/index.html' }],
 	optimize: {
 		/* Example: Bundle your final build: */
 		// "bundle": true,

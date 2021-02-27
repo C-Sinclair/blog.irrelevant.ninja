@@ -4,8 +4,8 @@
 	"main": "plugin.js",
 	"author": "C-Sinclair <conor@sinclair.software>",
 	"license": "MIT",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"description": ""
+	"description": "Compile svx files into static html pages",
+	"dependencies": {
+		"js-yaml": "^4.0.0"
+	}
 }

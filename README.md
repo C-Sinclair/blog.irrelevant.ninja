@@ -27,3 +27,5 @@ Build a ninja fighting in svg, or maybe 4 static positions which are looped thro
 ### Errors
 
 - Podcasting article doesnt escape the XML
+- Need to get snowpack dev server working
+- HMR isnt working yet
