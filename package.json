@@ -29,7 +29,7 @@
 		"@snowpack/plugin-dotenv": "^2.0.5",
 		"@snowpack/plugin-svelte": "^3.5.0",
 		"@snowpack/web-test-runner-plugin": "^0.2.0",
-		"@snowsvex/snowsvex": "^0.0.8",
+		"@snowsvex/snowsvex": "^0.0.10",
 		"@snowsvex/snowsvex-plugin": "^0.1.2",
 		"@testing-library/svelte": "^3.0.0",
 		"@web/test-runner": "^0.12.0",
