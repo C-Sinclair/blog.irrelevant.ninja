@@ -6,7 +6,12 @@ const BUILD_ROOT = './build'
 const config = await loadConfiguration()
 const { result } = await build({ config })
 
-const snowsvex = config.plugins.find(({ name }) => name === 'snowsvex-plugin')
+const snowsvex = config.plugins.find(({ name }) => name === '@snowsvex/snowsvex-plugin')
+if (!snowsvex) {
+	throw new Error(
+		'The snowsvex plugin was not found! Install it: `yarn add -D @snowsvex/snowsvex-plugin`'
+	)
+}
 const opts = snowsvex.config()
 
 await Promise.all(

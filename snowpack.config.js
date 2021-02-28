@@ -15,7 +15,7 @@ module.exports = {
 		// 	}
 		// ],
 		'@snowpack/plugin-dotenv',
-		['snowsvex-plugin', { pagesDirs: ['pages', 'articles'] }]
+		['@snowsvex/snowsvex-plugin', { pagesDirs: ['pages', 'articles'] }]
 	],
 	routes: [{ match: 'routes', src: '.*', dest: '/index.html' }],
 	optimize: {
