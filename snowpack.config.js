@@ -7,28 +7,8 @@ module.exports = {
 		src: { url: '/' }
 	},
 	plugins: [
-		// [
-		// 	'@snowpack/plugin-svelte',
-		// 	{
-		// 		preprocess: mdsvex(),
-		// 		input: ['.svelte', '.svx']
-		// 	}
-		// ],
 		'@snowpack/plugin-dotenv',
 		['@snowsvex/snowsvex-plugin', { pagesDirs: ['pages', 'articles'] }]
 	],
-	routes: [{ match: 'routes', src: '.*', dest: '/index.html' }],
-	optimize: {
-		/* Example: Bundle your final build: */
-		// "bundle": true,
-	},
-	packageOptions: {
-		/* ... */
-	},
-	devOptions: {
-		/* ... */
-	},
-	buildOptions: {
-		/* ... */
-	}
+	routes: [{ match: 'routes', src: '.*', dest: '/index.html' }]
 }
