@@ -4,7 +4,6 @@ date: '09-24-2020'
 shortTitle: 'Flattening Nested Objects'
 title: 'Flattening Nested Objects'
 author: 'Conor Sinclair'
-featuredImage: ../images/leroy-evans-_P-hKe5H_o4-unsplash.jpg
 tags: ["Javascript"]
 emoji: '🐦'
 ---

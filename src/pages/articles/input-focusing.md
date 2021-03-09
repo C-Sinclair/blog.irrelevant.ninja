@@ -4,7 +4,6 @@ date: '04-09-2020'
 shortTitle: 'Input Focusing'
 title: 'Focusing on inputs in React'
 author: 'Conor Sinclair'
-featuredImage: ../images/victor-barrios-yjygDnvRuaI-unsplash.jpg
 tags: ["Javascript", "React"]
 emoji: '⌨'
 ---
