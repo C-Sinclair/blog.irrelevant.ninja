@@ -1,9 +1,12 @@
 <script>
   import Footer from "../components/Footer.svelte";
   import Nav from "../components/Nav.svelte";
+  import theme, { themeToCss } from "../stores/theme";
 
   export let title;
   export let description;
+
+  $: themeToCss(theme);
 </script>
 
 <svelte:head>

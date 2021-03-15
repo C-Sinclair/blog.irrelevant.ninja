@@ -1,13 +1,7 @@
-<script>
-  import { url } from '@roxi/routify'
-</script>
-
 <div class="e404">
   <div class="huge">404</div>
   <div class="big">
     Article not found.
-    <!-- link to the parent folder of _fallback.svelte -->
-    <a href="{$url('../')}">Go Back</a>
   </div>
 </div>
 

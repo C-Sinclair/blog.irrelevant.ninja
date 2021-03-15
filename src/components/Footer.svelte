@@ -7,10 +7,8 @@
   <div>
     <p>Made with this awesome stack:</p>
     <ul>
-      <li>Svelte</li>
+      <li>SvelteKit</li>
       <li>MDSvex</li>
-      <li>Routify</li>
-      <li>Rollup</li>
     </ul>
   </div>
 </footer>

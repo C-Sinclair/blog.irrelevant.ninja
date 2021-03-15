@@ -4,7 +4,10 @@ const LS_KEY = 'IRRELEVANT_NINJA_BLOG_THEME_y000ooo'
 const defaultTheme = 'dark'
 
 function createStore() {
-  const theme = localStorage.getItem(LS_KEY) || defaultTheme
+  let theme = defaultTheme
+  if (global.window !== undefined) {
+    localStorage.getItem(LS_KEY)
+  }
   const currentTheme = writable(theme)
   themeToCss(theme)
 
@@ -27,7 +30,9 @@ function createStore() {
  * @param {ThemeName} theme 
  */
 export function themeToCss(theme) {
-  document.body.setAttribute('data-theme', theme)
+  if (global.window !== undefined) {
+    document.body.setAttribute('data-theme', theme)
+  }
 }
 
 const theme = createStore()

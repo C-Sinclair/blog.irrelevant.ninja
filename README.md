@@ -1,29 +1,39 @@
-# Irrelevant Blog
+# create-svelte
 
-> Rewrite time!
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
-Time for a rewrite. Gatsby is _HEAVY_ let's use a nice light Svelte flavoured version!
+## Creating a project
 
-## Hosting
+If you're seeing this, you've probably already done this step. Congrats!
 
-- [ ] Netlify. The boss.
+```bash
+# create a new project in the current directory
+npm init svelte@next
 
-## Monitoring
+# create a new project in my-app
+npm init svelte@next my-app
+```
 
-- [ ] Sentry
+> Note: the `@next` is temporary
 
-### Colour pallete
+## Developing
 
-Light Blue #60CEE2
-Blue #6189D9
-Purple _Main_ #72148C
-Burgundy #4D1951
-Dark Navy #210759
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-### Ideas
+```bash
+npm run dev
 
-Build a ninja fighting in svg, or maybe 4 static positions which are looped through
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-### Errors
+## Building
 
-- Podcasting article doesnt escape the XML
+Svelte apps are built with _adapters_, which optimise your project for deployment to different environments, like [Begin](https://begin.com), [Netlify](https://www.netlify.com), [Vercel](https://vercel.com) and so on. (You can also create your own adapter — instructions TODO.)
+
+By default, `npm run build` will generate a Node app that you can run with `node build`. To use a different adapter, install it and update your `svelte.config.cjs` accordingly. The following official adapters are available:
+
+- [@sveltejs/adapter-node](https://github.com/sveltejs/kit/tree/master/packages/adapter-node)
+- [@sveltejs/adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)
+- [@sveltejs/adapter-netlify](https://github.com/sveltejs/kit/tree/master/packages/adapter-netlify)
+- ...more soon
