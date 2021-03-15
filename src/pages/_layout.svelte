@@ -20,13 +20,6 @@
 </main>
 
 <style>
-  :global(body) {
-    background: var(--background);
-    color: var(--text);
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
   main {
     width: 100vw;
     height: 100vh;

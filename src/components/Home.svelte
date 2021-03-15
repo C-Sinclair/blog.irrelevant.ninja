@@ -4,9 +4,6 @@
     fill="currentColor"
     stroke-width="0"
     viewBox="0 0 24 24"
-    size="20"
-    height="20"
-    width="20"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g>
@@ -20,7 +17,8 @@
 
 <style>
   a {
-    width: 35px;
-    height: 35px;
+    width: var(--button-size);
+    height: var(--button-size);
+    color: var(--text-1);
   }
 </style>
