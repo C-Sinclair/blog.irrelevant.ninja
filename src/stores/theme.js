@@ -5,8 +5,8 @@ const defaultTheme = 'dark'
 
 function createStore() {
   let theme = defaultTheme
-  if (global.window !== undefined) {
-    localStorage.getItem(LS_KEY)
+  if (typeof window !== 'undefined') {
+    theme = localStorage.getItem(LS_KEY)
   }
   const currentTheme = writable(theme)
   themeToCss(theme)
@@ -17,7 +17,10 @@ function createStore() {
   function set(theme) {
     currentTheme.set(theme)
     themeToCss(theme)
-    localStorage.setItem(LS_KEY, theme)
+
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(LS_KEY, theme)
+    }
   }
 
   return {
@@ -30,7 +33,7 @@ function createStore() {
  * @param {ThemeName} theme 
  */
 export function themeToCss(theme) {
-  if (global.window !== undefined) {
+  if (typeof window !== 'undefined') {
     document.body.setAttribute('data-theme', theme)
   }
 }

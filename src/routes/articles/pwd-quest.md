@@ -1,10 +1,9 @@
 ---
-path: '/a/mighty-pwd-quest'
 date: '09-25-2020'
 title: 'The Mighty Quest For PWD'
 shortTitle: 'Quest For PWD'
 author: 'Conor Sinclair'
-featuredImage: ../images/matthew-kalapuch-7psXKRl2amU-unsplash.jpg
+featuredImage: /images/matthew-kalapuch-7psXKRl2amU-unsplash.jpg
 tags: ["Zsh"]
 emoji: '⚔'
 ---

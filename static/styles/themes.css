@@ -37,6 +37,9 @@
   --gold: rgb(251, 251, 52);
   --grass: rgb(36, 199, 21);
 
+  /* Border */
+  --border-thin: 1px solid var(--text-3);
+
   /* Fonts */
   --title-font: "Pattaya", sans-serif;
   --body-font: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
@@ -64,6 +67,8 @@
   --spacing-20: calc(20 * var(--spacing-1));
 
   --button-size: var(--spacing-5);
+
+  --max-width: 923px;
 }
 
 [data-theme=dark] {

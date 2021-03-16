@@ -6,7 +6,7 @@
   export let title;
   export let description;
 
-  $: themeToCss(theme);
+  $: themeToCss($theme);
 </script>
 
 <svelte:head>

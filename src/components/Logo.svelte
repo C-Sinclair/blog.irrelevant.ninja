@@ -7,6 +7,7 @@
   div {
     position: relative;
     text-align: center;
+    margin-bottom: var(--spacing-7);
   }
   h1 {
     font-family: var(--title-font);
