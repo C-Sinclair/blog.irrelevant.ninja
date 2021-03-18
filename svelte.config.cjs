@@ -1,11 +1,13 @@
 const { mdsvex } = require("mdsvex");
 const mdsvexConfig = require("./mdsvex.config.cjs");
+const sveltePreprocess = require('svelte-preprocess');
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
 	preprocess: [
 		mdsvex(mdsvexConfig),
-		],
+		sveltePreprocess(),
+	],
 	extensions: [".svelte", ...mdsvexConfig.extensions],
 	kit: {
 		// By default, `npm run build` will create a standard Node app.

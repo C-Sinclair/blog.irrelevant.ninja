@@ -18,6 +18,7 @@
   <Nav />
 
   <slot />
+  {""}
 
   <Footer />
 </main>

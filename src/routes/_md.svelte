@@ -12,7 +12,7 @@
   <slot />
 </div>
 
-<style>
+<style lang="scss">
   .content {
     width: 100%;
     max-width: var(--max-width);

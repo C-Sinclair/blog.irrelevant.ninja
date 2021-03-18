@@ -1,3 +1,3 @@
-# Article Layout 
+# Article Layout
 
 <slot />

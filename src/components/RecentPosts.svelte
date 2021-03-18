@@ -1,5 +1,10 @@
-<script>
-  export let articles;
+<script lang="ts">
+  type Article = {
+    file: string;
+    date: string;
+    title: string;
+  };
+  export let articles: Article[];
 </script>
 
 <h1>Recent Articles</h1>
@@ -15,7 +20,7 @@
   {/each}
 </ul>
 
-<style>
+<style lang="scss">
   h1 {
     font-family: var(--title-font);
     color: var(--gold);
