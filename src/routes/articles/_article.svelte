@@ -9,9 +9,11 @@
 </svelte:head>
 
 <div class="content">
+  <h1>{title}</h1>
+
   <slot />
 </div>
 
 <style lang="scss">
-  @use "../styles/content" as *;
+  @use '../../styles/content' as *;
 </style>

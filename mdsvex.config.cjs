@@ -1,19 +1,15 @@
+const containers = require('remark-containers')
+
 module.exports = {
 	extensions: [".svx", ".md"],
 	smartypants: {
 		dashes: "oldschool",
 	},
-	remarkPlugins: [
-		// [require("remark-github"), {
-		// 	repository: "https://github.com/svelte-add/mdsvex.git", // (use your own repository)
-		// }],
-		// require("remark-abbr"),
-	],
-	rehypePlugins: [
-		// require("rehype-slug"),
-		// [require("rehype-autolink-headings"), {
-		// 	behavior: "wrap",
-		// }],
-	],
-	layout: 'src/routes/_md.svelte'
+	remarkPlugins: [containers],
+	rehypePlugins: [],
+	layout: {
+		article: 'src/routes/articles/_article.svelte',
+		headed: 'src/routes/_headed.svelte',
+		_: 'src/routes/_md.svelte'
+	}
 };

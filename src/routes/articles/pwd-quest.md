@@ -6,6 +6,7 @@ author: 'Conor Sinclair'
 featuredImage: /images/matthew-kalapuch-7psXKRl2amU-unsplash.jpg
 tags: ["Zsh"]
 emoji: '⚔'
+layout: article
 ---
 
 > I open a new shell. I'm greeted by the home directory. Dang! I wanted to be back in pwd.

@@ -5,6 +5,7 @@ title: 'Focusing on inputs in React'
 author: 'Conor Sinclair'
 tags: ["Javascript", "React"]
 emoji: '⌨'
+layout: article
 ---
 
 > Inputs can require focus...

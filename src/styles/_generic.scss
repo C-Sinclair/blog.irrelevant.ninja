@@ -1,0 +1,7 @@
+@mixin no-list-styles() {
+  list-style: none;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0;
+  padding: 0;
+}

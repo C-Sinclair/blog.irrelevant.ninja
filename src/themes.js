@@ -1,6 +1,6 @@
 /**
  * @typedef {{
- *  icon: import('svelte').SvelteComponent
+ *  icon: import('svelte').SvelteComponentDev
  * }} ThemeMeta
  * @typedef {string} ThemeName
  * @typedef {Record<ThemeName, ThemeMeta>} Themes

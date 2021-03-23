@@ -5,6 +5,7 @@ title: 'Asynchronous Array Reduce'
 author: 'Conor Sinclair'
 tags: ["Javascript"]
 emoji: '🍳'
+layout: article
 ---
 
 > Handling async actions in a reduce function

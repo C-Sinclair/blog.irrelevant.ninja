@@ -6,6 +6,7 @@ author: 'Conor Sinclair'
 featuredImage: /images/rostyslav-savchyn-TDV1i2f7rcc-unsplash.jpg
 tags: ["Vim"]
 emoji: '🔱'
+layout: article
 ---
 
 > Vim, I need indentation changed and I need it quick!

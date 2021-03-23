@@ -1,4 +1,7 @@
 <script>
+  import Profile from "../components/Profile.svelte";
+  import Logo from "../components/Logo.svelte";
+
   export let title;
   export let description;
 </script>
@@ -9,6 +12,9 @@
 </svelte:head>
 
 <div class="content">
+  <Profile />
+  <Logo />
+
   <slot />
 </div>
 

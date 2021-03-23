@@ -17,7 +17,7 @@ export async function get() {
       }]
     }
     return res
-  }, Promise.resolve([])) 
+  }, Promise.resolve([] as string[])) 
   return { body }
 }
 

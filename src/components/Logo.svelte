@@ -3,18 +3,16 @@
   <sub>Blog</sub>
 </div>
 
-<style>
+<style lang="scss">
+  @use '../styles/text';
+
   div {
     position: relative;
     text-align: center;
     margin-bottom: var(--spacing-7);
   }
   h1 {
-    font-family: var(--title-font);
-    color: var(--gold);
-    font-size: 3em;
-    text-decoration: underline;
-    margin: 0;
+    @include text.gold-title();
   }
   sub {
     position: absolute;

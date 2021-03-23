@@ -1,0 +1,8 @@
+@mixin gold-title($font-size: 3em, $decoration: underline) {
+  font-family: var(--title-font);
+  color: var(--gold);
+  text-decoration: $decoration;
+  margin: 0;
+  font-size: $font-size;
+  @content;
+}

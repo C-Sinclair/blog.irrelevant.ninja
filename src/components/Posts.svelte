@@ -1,13 +1,11 @@
 <script lang="ts">
-  type Article = {
-    file: string;
-    date: string;
-    title: string;
-  };
+  import type { Article } from "src/types";
+
   export let articles: Article[];
+  export let recent = false;
 </script>
 
-<h1>Recent Articles</h1>
+<h1>{recent ? `Recent ` : ``}Articles</h1>
 
 <ul>
   {#each articles as article}
@@ -21,17 +19,14 @@
 </ul>
 
 <style lang="scss">
+  @use '../styles/text';
+  @use '../styles/generic';
+
   h1 {
-    font-family: var(--title-font);
-    color: var(--gold);
-    font-size: 2em;
+    @include text.gold-title(2em, none);
   }
   ul {
-    list-style: none;
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0;
-    padding: 0;
+    @include generic.no-list-styles();
   }
   li {
     padding: var(--spacing-2);

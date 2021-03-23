@@ -1,23 +1,33 @@
-<script>
-  import Wave from "./Wave.svelte";
+<script lang="ts">
+  const deps = {
+    SvelteKit: "",
+    MDSvex: "https://mdsvex.pngwn.io/",
+    Sass: "",
+    Typescript: "",
+    "Remark Containers": "https://github.com/Nevenall/remark-containers",
+  };
 </script>
 
 <footer>
-  <Wave />
   <div>
     <p>Made with this awesome stack:</p>
     <ul>
-      <li>SvelteKit</li>
-      <li>MDSvex</li>
+      {#each Object.entries(deps) as [dep, link]}
+        <li>
+          <a href={link}>
+            {dep}
+          </a>
+        </li>
+      {/each}
     </ul>
   </div>
 </footer>
 
-<style>
+<style lang="scss">
+  @use '../styles/generic';
+
   footer {
     position: relative;
-    background-color: var(--grass);
-    border-radius: 100% 100% 0 0;
     height: 150px;
     padding: var(--spacing-8) 0;
     margin-top: 200px;
@@ -28,10 +38,10 @@
     margin: 0 auto;
   }
   ul {
+    @include generic.no-list-styles();
     display: flex;
     justify-content: space-between;
     width: calc(100% - var(--spacing-4));
-    padding: 0;
   }
   li {
     list-style: none;
