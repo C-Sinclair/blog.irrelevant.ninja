@@ -7,7 +7,7 @@ const readFile = util.promisify(fs.readFile)
 
 export async function get() {
   const dir = await readdir(`${process.cwd()}/src/routes/articles`)
-  const body = await dir.reduce(async (res, file) => {
+  const files = await dir.reduce(async (res, file) => {
     if (file.endsWith('.md')) {
       const raw = await readFile(`${process.cwd()}/src/routes/articles/${file}`, 'utf-8')
       const front = frontmatter(raw)
@@ -17,7 +17,11 @@ export async function get() {
       }]
     }
     return res
-  }, Promise.resolve([] as string[])) 
+  }, Promise.resolve([] as { file: string, date: string }[])) 
+  const body = files.sort((a, b) => {
+    //@ts-ignore
+    return new Date(b.date) - new Date(a.date) 
+  })
   return { body }
 }
 
