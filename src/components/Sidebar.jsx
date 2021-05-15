@@ -1,8 +1,6 @@
-import React from 'react'
 import { RiHomeSmileFill as HomeIcon } from 'react-icons/ri'
-import { Link } from 'gatsby'
 import { Profile } from '.'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 export const Sidebar = ({ children }) => {
   return (
@@ -15,11 +13,9 @@ export const Sidebar = ({ children }) => {
         <h4>Conor Sinclair</h4>
         <p>A Software Developer of high esteem</p>
       </ProfileContainer>
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
       <Footer>
-        <Link to="/contact/">Get in contact</Link>
+        <a href="/contact">Get in contact</a>
       </Footer>
     </Nav>
   )
@@ -39,10 +35,10 @@ const Nav = styled.nav`
     width: 50px;
     min-width: 50px;
     background: ${({ theme }) => theme.palette.darkest};
-  } 
+  }
 `
 
-const Home = styled(Link)`
+const Home = styled.a`
   cursor: pointer;
 `
 

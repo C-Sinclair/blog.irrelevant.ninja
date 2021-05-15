@@ -1,24 +1,15 @@
-import React, { useState } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useState } from 'preact/hooks'
 import { useTags } from '../hooks'
 import { IoMdResize, IoMdClose } from 'react-icons/io'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 const DEFAULT_MAX_VISIBLE = 7
 
+// TODO generate the tags json and import that
+const tags = []
+
 export const Tags = () => {
   const [open, setOpen] = useState(false)
-  const data = useStaticQuery(graphql`
-        query AllTagsQuery {
-            allMarkdownRemark {
-                group(field: frontmatter___tags) {
-                    tag: fieldValue
-                    totalCount
-                }
-            }
-        }
-    `)
-  const tags = data.allMarkdownRemark.group.sort((a, b) => a.totalCount > b.totalCount ? -1 : 1)
   const { selectedTags, selectTag } = useTags()
 
   const handleClick = tag => () => selectTag(tag)
@@ -26,19 +17,23 @@ export const Tags = () => {
   return (
     <Card open={open}>
       <h4>Tags</h4>
-      { tags.length > DEFAULT_MAX_VISIBLE && !open
-        ? <IoMdResize size={14} onClick={() => setOpen(true)} />
-        : <IoMdClose size={14} onClick={() => setOpen(false)} />
-      }
+      {tags.length > DEFAULT_MAX_VISIBLE && !open ? (
+        <IoMdResize size={14} onClick={() => setOpen(true)} />
+      ) : (
+        <IoMdClose size={14} onClick={() => setOpen(false)} />
+      )}
       <ol>
         {tags
-          .reduce((acc, item, index) => (open || index < DEFAULT_MAX_VISIBLE) ? [...acc, item] : acc, [])
+          .reduce(
+            (acc, item, index) => (open || index < DEFAULT_MAX_VISIBLE ? [...acc, item] : acc),
+            []
+          )
           .map(({ tag, totalCount }) => (
-            <Tag
-              selected={selectedTags.includes(tag)}
-              onClick={handleClick(tag)}>
+            <Tag selected={selectedTags.includes(tag)} onClick={handleClick(tag)}>
               <p>{tag}</p>
-              <Count><p>{totalCount}</p></Count>
+              <Count>
+                <p>{totalCount}</p>
+              </Count>
             </Tag>
           ))}
       </ol>
@@ -51,7 +46,7 @@ const Card = styled.div`
   padding: 10px;
   position: absolute;
   transition: all 0.5s ease;
-  top: ${({ open }) => open ? -185 : 0}px;
+  top: ${({ open }) => (open ? -185 : 0)}px;
   svg {
     position: absolute;
     right: 10px;
@@ -66,10 +61,8 @@ const Card = styled.div`
 const Tag = styled.div`
   display: flex;
   font-size: 0.8em;
-  background: ${({ theme, selected }) => selected
-    ? 'green'
-    : theme.palette.dark};
-  font-weight: 500
+  background: ${({ theme, selected }) => (selected ? 'green' : theme.palette.dark)};
+  font-weight: 500;
   align-items: center;
   height: 30px;
   border-radius: 30px;
@@ -82,7 +75,6 @@ const Tag = styled.div`
     background: ${({ theme }) => theme.palette.lightest};
   }
   p {
-
   }
 `
 
