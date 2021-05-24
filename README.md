@@ -12,4 +12,5 @@ Dark Navy #210759
 
 ### Ideas
 
-Build a ninja fighting in svg, or maybe 4 static positions which are looped through
+- [ ] Build a ninja fighting in svg, or maybe 4 static positions which are looped through
+- [ ] Scan my signature and add it to the footer

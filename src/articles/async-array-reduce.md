@@ -1,11 +1,11 @@
 ---
-path: '/a/async-array-reduce'
+path: '/articles/async-array-reduce'
 date: '09-22-2020'
 shortTitle: 'Async Array Reduce'
 title: 'Asynchronous Array Reduce'
 author: 'Conor Sinclair'
 featuredImage: ../images/imani-vDQ-e3RtaoE-unsplash.jpg
-tags: ["Javascript"]
+tags: ['Javascript']
 emoji: '🍳'
 ---
 
@@ -38,9 +38,9 @@ However once we introduce `async` as the reducer, we run into issues with the ac
 ```jsx
 // DOESN'T WORK
 fields.reduce(async (acc, field) => {
-	const { validation, value } = field
-	const { passes } = await validation(value)
-	return passes ? acc : acc.concat(field)
+  const { validation, value } = field
+  const { passes } = await validation(value)
+  return passes ? acc : acc.concat(field)
 }, [])
 ```
 

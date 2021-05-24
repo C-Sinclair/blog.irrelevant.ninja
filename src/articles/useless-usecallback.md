@@ -1,11 +1,11 @@
 ---
-path: '/a/useless-usecallback'
+path: '/articles/useless-usecallback'
 date: '02-01-2021'
-title: "useLess useCallback"
-shortTitle: "useLess useCallback"
+title: 'useLess useCallback'
+shortTitle: 'useLess useCallback'
 author: 'Conor Sinclair'
 featuredImage: ../images/imani-vDQ-e3RtaoE-unsplash.jpg
-tags: ["Javascript", "React"]
+tags: ['Javascript', 'React']
 emoji: '🍳'
 ---
 
@@ -13,15 +13,15 @@ Found this `useCallback` in the one of the components at work. This is actually
 
 ```jsx
 const handleClick = useCallback(() => {
-    setClicked(true);
-}, [clicked]);
+  setClicked(true)
+}, [clicked])
 ```
 
 With `useCallback` the function you pass it is memo-ized until one of the variables in its dependency array changes, and then the function is re-memo-ized with the new value for that variable. In this example nothing in the function relies on that `clicked` variable so we can rely on the function being pure instead of React's `useCallback`So this will be more efficient:
 
 ```jsx
 const handleClick = () => {
-    setClicked(true);
+  setClicked(true)
 }
 ```
 
@@ -29,9 +29,9 @@ const handleClick = () => {
 
 ```jsx
 const handleClick = useCallback(() => {
-  if (anotherVar) doSomething();
-  setClicked(true);
-}, [anotherVar]);
+  if (anotherVar) doSomething()
+  setClicked(true)
+}, [anotherVar])
 ```
 
 we need the current value of anotherVar so the function cant be memoised otherwise it will always use the initial value.
@@ -40,6 +40,6 @@ Last thing, if you need a guarantee that the `clicked` variable is current you 
 
 ```jsx
 const handleClick = () => {
-    setClicked(clicked => !clicked);
+  setClicked(clicked => !clicked)
 }
 ```

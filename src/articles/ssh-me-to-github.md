@@ -1,11 +1,11 @@
 ---
-path: '/a/ssh-me-to-github'
+path: '/articles/ssh-me-to-github'
 date: '03-22-2020'
 shortTitle: 'SSH me to Github'
 title: 'SSH me to Github'
 author: 'Conor Sinclair'
 featuredImage: ../images/imani-vDQ-e3RtaoE-unsplash.jpg
-tags: ["SSH", "Git"]
+tags: ['SSH', 'Git']
 emoji: '🍳'
 ---
 
@@ -15,7 +15,7 @@ After a good half an hour of confusion at why both my work laptop and home arch 
 
 [ssh: connect to host github.com port 22: Connection timed out](https://stackoverflow.com/a/52817036/10590986)
 
-That's right, I just needed to add a remapping for [github.com](http://github.com) → [ssh.github.com](http://ssh.github.com) 
+That's right, I just needed to add a remapping for [github.com](http://github.com) → [ssh.github.com](http://ssh.github.com)
 
 I know, strange one, but the most important thing is it works!
 

@@ -1,17 +1,17 @@
 ---
-path: '/a/fucking-salesforce'
+path: '/articles/fucking-salesforce'
 date: '04-24-2020'
 shortTitle: 'Fucking Salesforce'
 title: 'Fucking Salesforce'
 author: 'Conor Sinclair'
 featuredImage: ../images/imani-vDQ-e3RtaoE-unsplash.jpg
-tags: ["Javascript", "Salesforce"]
+tags: ['Javascript', 'Salesforce']
 emoji: '🍳'
 ---
 
 > Tackling a simple task in a behemoth of a platform
 
-So Salesforce. Its huge. Enterprise focussed. And you know what that means... complicated APIs, and fucking Java. 
+So Salesforce. Its huge. Enterprise focussed. And you know what that means... complicated APIs, and fucking Java.
 
 Well that's not the way I roll. Its dynamic languages all the way at work, and there's no way I'm using a language stuck in the stone age.
 
@@ -25,19 +25,19 @@ There was a simple solution. Web-to-lead. One POST request with your organisatio
 
 ### SOAP
 
-My manager kept pushing me to the SOAP API documentation. Oh yeah did I mention Salesforce has like 20 APIs, SOAP and REST being just 2 of them. 
+My manager kept pushing me to the SOAP API documentation. Oh yeah did I mention Salesforce has like 20 APIs, SOAP and REST being just 2 of them.
 
 Again, SOAP? Is this 1997? No. It's not. So fuck that.
 
-After tentatively downloading our WSDL - like a graph of the available resources in the SOAP endpoint - and inspecting that badboy. After cleaning up the vomit from my desk and shirt I was able to peek through some of the 5000 line long XML document. 
+After tentatively downloading our WSDL - like a graph of the available resources in the SOAP endpoint - and inspecting that badboy. After cleaning up the vomit from my desk and shirt I was able to peek through some of the 5000 line long XML document.
 
 ### Reach for a library
 
 There is hope on the horizon. Enter `jsforce` [INSERT JIGGLE HERE]
 
-How many libraries do you know of which come with a REPL? Very few good sir, but this is one of the few. 
+How many libraries do you know of which come with a REPL? Very few good sir, but this is one of the few.
 
-Power up REPL. Ok. Login. Ok. I'll just use my username and password. Nope. Need a secret key. 
+Power up REPL. Ok. Login. Ok. I'll just use my username and password. Nope. Need a secret key.
 
 > aside: I actually had to grant my user API access as well
 
@@ -60,20 +60,22 @@ No.
 Ok well can I see other `sobjects` at least?
 
 ```json
-describeGlobal().then(info => info.sobjects.reduce((acc, { name }, index) => `${acc}, ${index % 4 ? name : `\n${name}`}`, ''))
+describeGlobal().then(info =>
+  info.sobjects.reduce((acc, { name }, index) => `${acc}, ${index % 4 ? name : `\n${name}`}`, "")
+)
 ```
 
 The reduce part is literally so it will fit all the `sobject` names onto the page as it will cutting off half the list before.
 
-Ok so there's a nice long list of stuff I *can* see. But Leads is not there.
+Ok so there's a nice long list of stuff I _can_ see. But Leads is not there.
 
 ### Permissions
 
-So far I've been using a standard Salesforce user to do all of this. I had to grant API access permission at one point - in the user management setup for my user. But this problem goes deep. To view the Lead (or Contact) `sobject` you need higher permissions than my measly user license will allow. 
+So far I've been using a standard Salesforce user to do all of this. I had to grant API access permission at one point - in the user management setup for my user. But this problem goes deep. To view the Lead (or Contact) `sobject` you need higher permissions than my measly user license will allow.
 
 In the end I solved this by pinching the credentials of a system administrator user (one of the sales team) with his consent of course. Cmon I'm not that bad!
 
-With permissions in hand rerunning the previous queries in the REPL actually give results! Party time. 
+With permissions in hand rerunning the previous queries in the REPL actually give results! Party time.
 
 Almost.
 
@@ -83,17 +85,17 @@ Now we just need to create the actual Lead. We'll do this in actual code this ti
 
 ```jsx
 const conn = new jsforce.Connection({
-  loginUrl : 'https://fuckyousf.salesforce.com'
-});
+  loginUrl: 'https://fuckyousf.salesforce.com'
+})
 await conn.login(username, password + secret)
-const res = await conn.sobject("Lead").create({
-	Company: 'Badass corp.',
-	LastName: 'Lastly',
+const res = await conn.sobject('Lead').create({
+  Company: 'Badass corp.',
+  LastName: 'Lastly'
 })
 ```
 
 And there we have it. No error should be thrown, and if we check the Salesforce Leads tab we should see the new lead listed in all its glory.
 
-Only `Company` and `LastName` are actually required but there's bloody loads of them you can add to.  
+Only `Company` and `LastName` are actually required but there's bloody loads of them you can add to.
 
 And there we have it. Lead created and I can leak all of this domain specific knowledge into this post, and forget all about it in my limited cognitive capacity!

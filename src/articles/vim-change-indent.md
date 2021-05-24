@@ -1,11 +1,11 @@
 ---
-path: '/a/quick-vim-indent-change'
+path: '/articles/quick-vim-indent-change'
 date: '09-24-2020'
 title: 'Quick Vim Indentation Change'
 shortTitle: 'Quick Vim Indent Change'
 author: 'Conor Sinclair'
 featuredImage: ../images/rostyslav-savchyn-TDV1i2f7rcc-unsplash.jpg
-tags: ["Vim"]
+tags: ['Vim']
 emoji: '🔱'
 ---
 

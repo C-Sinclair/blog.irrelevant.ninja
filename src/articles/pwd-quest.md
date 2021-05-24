@@ -1,11 +1,11 @@
 ---
-path: '/a/mighty-pwd-quest'
+path: '/articles/mighty-pwd-quest'
 date: '09-25-2020'
 title: 'The Mighty Quest For PWD'
 shortTitle: 'Quest For PWD'
 author: 'Conor Sinclair'
 featuredImage: ../images/matthew-kalapuch-7psXKRl2amU-unsplash.jpg
-tags: ["Zsh"]
+tags: ['Zsh']
 emoji: '⚔'
 ---
 
@@ -17,7 +17,7 @@ With the power of zsh on our side we will conquer this worthy challenge!
 
 Save the current directory in a file somewhere. The catch is this needs to happen every time the shell moves to a new directory.
 
-My first thought was to make a wrapper around `cd` which would report the new location and then move your shell forward. Alas this is not possible, because although you can pick up the command and log where you intend to go, the final line will throw you off. `cd $LOCATION` This will change the directory of the subprocess which the shell script is running in. *Not your process.* So this basically leaves you unable to move around your filesystem ...So not great!
+My first thought was to make a wrapper around `cd` which would report the new location and then move your shell forward. Alas this is not possible, because although you can pick up the command and log where you intend to go, the final line will throw you off. `cd $LOCATION` This will change the directory of the subprocess which the shell script is running in. _Not your process._ So this basically leaves you unable to move around your filesystem ...So not great!
 
 Fortunately there is a different tactic we can take! In `zsh` there is a command which will run before every shell command. This magic function is called `preexec` - imaginative name right?
 

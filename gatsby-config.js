@@ -7,7 +7,6 @@ module.exports = {
 	},
 	plugins: [
 		`gatsby-plugin-netlify`,
-		`gatsby-plugin-sass`,
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
@@ -41,9 +40,9 @@ module.exports = {
 			resolve: 'gatsby-plugin-react-svg',
 			options: {
 				rule: {
-					include: /\.svg$/,
-				},
-			},
+					include: /\.svg$/
+				}
+			}
 		},
 		`gatsby-plugin-catch-links`,
 		{
@@ -55,10 +54,7 @@ module.exports = {
 						options: {
 							maxWidth: 800,
 							wrapperStyle: fluidResult =>
-								`flex:${_.round(
-									fluidResult.aspectRatio,
-									2
-								)}`
+								`flex:${_.round(fluidResult.aspectRatio, 2)}`
 						}
 					}
 				]

@@ -1,11 +1,11 @@
 ---
-path: '/a/creation'
+path: '/articles/creation'
 date: '05-07-2019'
 title: 'Building a Gatsby blog'
 shortTitle: 'Creation'
 author: 'Conor Sinclair'
 featuredImage: ../images/daan-stevens-9z0V7KuvPgo-unsplash.jpg
-tags: ["Gatsby", "Javascript", "React"]
+tags: ['Gatsby', 'Javascript', 'React']
 emoji: '✏'
 ---
 

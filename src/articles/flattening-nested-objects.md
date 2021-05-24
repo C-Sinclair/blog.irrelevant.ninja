@@ -1,11 +1,11 @@
 ---
-path: '/a/flattening-nested-objects'
+path: '/articles/flattening-nested-objects'
 date: '09-24-2020'
 shortTitle: 'Flattening Nested Objects'
 title: 'Flattening Nested Objects'
 author: 'Conor Sinclair'
 featuredImage: ../images/leroy-evans-_P-hKe5H_o4-unsplash.jpg
-tags: ["Javascript"]
+tags: ['Javascript']
 emoji: '🐦'
 ---
 
@@ -38,11 +38,9 @@ So reduce is going to work basically like `Array.map` its going to iterate over 
 With our array of keys of the object we can then run reduce over it, so that it calls our function for each key. This will then allow us to check if the value at that key is an object or just a regular value. If it is an object then we get grab all of its properties and spread them out into the new object we want to return.
 
 ```jsx
-Object.keys(obj).reduce ((acc, key) => {
-	const value = obj[key]
-	return (typeof value === 'object')
-		? { ...acc, ...value }
-		: { ...acc, key: value }
+Object.keys(obj).reduce((acc, key) => {
+  const value = obj[key]
+  return typeof value === 'object' ? { ...acc, ...value } : { ...acc, key: value }
 })
 ```
 
@@ -51,12 +49,11 @@ One other thing to note is that we want to return a new object, so it makes sens
 ### The Final Product
 
 ```jsx
-const flatten = obj => Object.keys(obj).reduce((acc, key) => {
-	const value = obj[key]
-	return (typeof value === 'object')
-		? { ...acc, ...(flatten(value)) }
-		: { ...acc, key: value }
-}, {})
+const flatten = obj =>
+  Object.keys(obj).reduce((acc, key) => {
+    const value = obj[key]
+    return typeof value === 'object' ? { ...acc, ...flatten(value) } : { ...acc, key: value }
+  }, {})
 ```
 
 ### Beware
