@@ -1,9 +1,9 @@
-import React from 'react'
-import { Layout, SEO } from '../components'
+import React from 'react';
+import { Layout, SEO } from '../components';
 
 const ContactPage = () => (
 	<Layout crumb={[{ href: '/contact', icon: 'person', text: 'Contact' }]}>
-		<SEO title="Contact" />
+		<SEO title='Contact' />
 		<header>
 			<h1>Contact</h1>
 		</header>
@@ -11,6 +11,6 @@ const ContactPage = () => (
 			<p>Why not drop me a message</p>
 		</div>
 	</Layout>
-)
+);
 
-export default ContactPage
+export default ContactPage;

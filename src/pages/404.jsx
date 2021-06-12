@@ -1,11 +1,11 @@
-import styled from '@emotion/styled'
-import { Link } from 'gatsby'
-import React from 'react'
-import { Layout, SEO } from '../components'
+import styled from '@emotion/styled';
+import { Link } from 'gatsby';
+import React from 'react';
+import { Layout, SEO } from '../components';
 
 const NotFoundPage = () => (
 	<Layout>
-		<SEO title="404: Not found" />
+		<SEO title='404: Not found' />
 		<Container>
 			<h1>NOT FOUND</h1>
 			<p>This route does not exist</p>
@@ -15,7 +15,7 @@ const NotFoundPage = () => (
 			</div>
 		</Container>
 	</Layout>
-)
+);
 
 const Container = styled.div`
 	display: flex;
@@ -31,6 +31,6 @@ const Container = styled.div`
 		text-decoration: none;
 		font-family: ${({ theme }) => theme.fonts.main};
 	}
-`
+`;
 
-export default NotFoundPage
+export default NotFoundPage;

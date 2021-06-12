@@ -1,10 +1,10 @@
-import { css } from '@emotion/react'
-import { theme } from '.'
-import './fonts.css'
-import './reset.css'
+import { css } from '@emotion/react';
+import { theme } from '.';
+import './fonts.css';
+import './reset.css';
 
-const { palette, fonts, gradients } = theme
-const { dark, darkest, gold } = palette
+const { palette, fonts, gradients } = theme;
+const { dark, darkest, gold } = palette;
 
 export const globalStyles = css`
 	::-webkit-scrollbar {
@@ -120,4 +120,4 @@ export const globalStyles = css`
 	li {
 		color: #fff;
 	}
-`
+`;

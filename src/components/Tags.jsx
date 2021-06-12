@@ -1,74 +1,73 @@
-import React, { useState } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { useTags } from '../hooks'
-import { IoMdResize, IoMdClose } from 'react-icons/io'
-import styled from '@emotion/styled'
+import React, { useState } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { useTags } from '../hooks';
+import { IoMdResize, IoMdClose } from 'react-icons/io';
+import styled from '@emotion/styled';
 
-const DEFAULT_MAX_VISIBLE = 7
+const DEFAULT_MAX_VISIBLE = 7;
 
 export const Tags = () => {
-  const [open, setOpen] = useState(false)
-  const data = useStaticQuery(graphql`
-        query AllTagsQuery {
-            allMarkdownRemark {
-                group(field: frontmatter___tags) {
-                    tag: fieldValue
-                    totalCount
-                }
-            }
-        }
-    `)
-  const tags = data.allMarkdownRemark.group.sort((a, b) => a.totalCount > b.totalCount ? -1 : 1)
-  const { selectedTags, selectTag } = useTags()
+	const [open, setOpen] = useState(false);
+	const data = useStaticQuery(graphql`
+		query AllTagsQuery {
+			allMarkdownRemark {
+				group(field: frontmatter___tags) {
+					tag: fieldValue
+					totalCount
+				}
+			}
+		}
+	`);
+	const tags = data.allMarkdownRemark.group.sort((a, b) => (a.totalCount > b.totalCount ? -1 : 1));
+	const { selectedTags, selectTag } = useTags();
 
-  const handleClick = tag => () => selectTag(tag)
+	const handleClick = tag => () => selectTag(tag);
 
-  return (
-    <Card open={open}>
-      <h4>Tags</h4>
-      { tags.length > DEFAULT_MAX_VISIBLE && !open
-        ? <IoMdResize size={14} onClick={() => setOpen(true)} />
-        : <IoMdClose size={14} onClick={() => setOpen(false)} />
-      }
-      <ol>
-        {tags
-          .reduce((acc, item, index) => (open || index < DEFAULT_MAX_VISIBLE) ? [...acc, item] : acc, [])
-          .map(({ tag, totalCount }) => (
-            <Tag
-              selected={selectedTags.includes(tag)}
-              onClick={handleClick(tag)}>
-              <p>{tag}</p>
-              <Count><p>{totalCount}</p></Count>
-            </Tag>
-          ))}
-      </ol>
-    </Card>
-  )
-}
+	return (
+		<Card open={open}>
+			<h4>Tags</h4>
+			{tags.length > DEFAULT_MAX_VISIBLE && !open ? (
+				<IoMdResize size={14} onClick={() => setOpen(true)} />
+			) : (
+				<IoMdClose size={14} onClick={() => setOpen(false)} />
+			)}
+			<ol>
+				{tags
+					.reduce((acc, item, index) => (open || index < DEFAULT_MAX_VISIBLE ? [...acc, item] : acc), [])
+					.map(({ tag, totalCount }) => (
+						<Tag selected={selectedTags.includes(tag)} onClick={handleClick(tag)}>
+							<p>{tag}</p>
+							<Count>
+								<p>{totalCount}</p>
+							</Count>
+						</Tag>
+					))}
+			</ol>
+		</Card>
+	);
+};
 
 const Card = styled.div`
-  background: ${({ theme }) => theme.palette.dark};
-  padding: 10px;
-  position: absolute;
-  transition: all 0.5s ease;
-  top: ${({ open }) => open ? -185 : 0}px;
-  svg {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
-  }
-  h4 {
-    color: #fff;
-  }
-`
+	background: ${({ theme }) => theme.palette.dark};
+	padding: 10px;
+	position: absolute;
+	transition: all 0.5s ease;
+	top: ${({ open }) => (open ? -185 : 0)}px;
+	svg {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		cursor: pointer;
+	}
+	h4 {
+		color: #fff;
+	}
+`;
 
 const Tag = styled.div`
   display: flex;
   font-size: 0.8em;
-  background: ${({ theme, selected }) => selected
-    ? 'green'
-    : theme.palette.dark};
+  background: ${({ theme, selected }) => (selected ? 'green' : theme.palette.dark)};
   font-weight: 500
   align-items: center;
   height: 30px;
@@ -84,21 +83,21 @@ const Tag = styled.div`
   p {
 
   }
-`
+`;
 
 const Count = styled.div`
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${({ theme }) => theme.palette.light};
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
-  margin-top: 5px;
-  p {
-    text-align: center;
-    margin-bottom: 0px;
-    font-size: 0.8em;
-  }
-`
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: ${({ theme }) => theme.palette.light};
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	margin-top: 5px;
+	p {
+		text-align: center;
+		margin-bottom: 0px;
+		font-size: 0.8em;
+	}
+`;
