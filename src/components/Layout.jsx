@@ -4,6 +4,8 @@ import { Sidebar, Tags } from '.';
 import { TagContext } from '../hooks';
 import styled from '@emotion/styled';
 import { useSidebar } from '../hooks/useSidebar';
+import { ThemeProvider } from '@emotion/react';
+import { theme } from '../styles';
 
 export const Layout = ({ children, tags = false, article = false }) => {
 	const data = useStaticQuery(graphql`
@@ -20,14 +22,16 @@ export const Layout = ({ children, tags = false, article = false }) => {
 	const [sidebarOpen] = useSidebar();
 
 	return (
-		<TagContext.Provider value={{ selectedTags, setSelectedTags }}>
-			<Root data-sidebar-open={sidebarOpen}>
-				<Sidebar title={data.site.siteMetadata.title} article={article}>
-					{tags && <Tags />}
-				</Sidebar>
-				<main>{children}</main>
-			</Root>
-		</TagContext.Provider>
+		<ThemeProvider theme={theme}>
+			<TagContext.Provider value={{ selectedTags, setSelectedTags }}>
+				<Root data-sidebar-open={sidebarOpen}>
+					<Sidebar title={data.site.siteMetadata.title} article={article}>
+						{tags && <Tags />}
+					</Sidebar>
+					<main>{children}</main>
+				</Root>
+			</TagContext.Provider>
+		</ThemeProvider>
 	);
 };
 

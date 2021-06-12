@@ -25,7 +25,7 @@ And the star of the show, `Array.reduce`
 
 So since we need a single list to be returned which could be smaller than the original list we are passing in, the best array function to use is `reduce`.
 
-For a detailed breakdown of how the reduce function works, check out [Flattening nested objects](https://blog.irrelevant.ninja/a/flattening-nested-objects)
+For a detailed breakdown of how the reduce function works, check out [Flattening nested objects](https://blog.irrelevant.ninja/articles/flattening-nested-objects)
 
 Typically the `reduce` function takes a synchronous function as its first argument, and we might pass in an empty version of the data structure we want to receive as the reduce function's output. So we might think something along the lines of the below would be a good solution to our problem.
 
@@ -38,10 +38,10 @@ However once we introduce `async` as the reducer, we run into issues with the ac
 ```jsx
 // DOESN'T WORK
 fields.reduce(async (acc, field) => {
-  const { validation, value } = field
-  const { passes } = await validation(value)
-  return passes ? acc : acc.concat(field)
-}, [])
+	const { validation, value } = field;
+	const { passes } = await validation(value);
+	return passes ? acc : acc.concat(field);
+}, []);
 ```
 
 The issue is that the type of the accumulator shifts from `typeof Array` to `typeof Promise` after the first iteration. This is because the async function will always return a `Promise`. So this is fine for the first iteration, but what do you think will happen in pass #2 of the reduce function?
@@ -62,7 +62,7 @@ fields.reduce(async (acc, field) => {..}, Promise.resolve([]))
 We then still need to change our `concat` function. So we need a way to access the value wrapped inside the Promise chain. Values can be accessed using the `Promise.then` function, which will accept a function with the values as its argument.
 
 ```jsx
-acc.then(fields => fields.concat(field))
+acc.then(fields => fields.concat(field));
 ```
 
 ### Final Result
@@ -91,7 +91,7 @@ Promise.resolve([])
 Promises are not quite Functors or Monads as they do not conform to the rules required of them from Category Theory.
 
 ```jsx
-promise.then(f).then(g) !== promise.then(x => f(g(x)))
+promise.then(f).then(g) !== promise.then(x => f(g(x)));
 ```
 
 But dealing with safe containers is still a nice way to go about your day.
