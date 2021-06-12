@@ -1,14 +1,20 @@
 import React, { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import format from 'date-fns/format';
 import { Layout, SEO } from '../components';
 import styled from '@emotion/styled';
 import { VscCalendar } from 'react-icons/vsc';
-import { css } from '@emotion/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { MDXProvider } from '@mdx-js/react';
+import Code from '../components/Code';
+import format from 'date-fns/format';
+
+const mdxComponents = {
+	code: Code,
+};
 
 export default function Template({ data }) {
-	const article = data.markdownRemark;
+	const article = data.mdx;
 	const {
 		frontmatter: { title, date, featuredImage, emoji },
 	} = article;
@@ -27,7 +33,9 @@ export default function Template({ data }) {
 					</DateContainer>
 				</header>
 				<BannerImage fullWidth fluid={featuredImage.childImageSharp.fluid} />
-				<div dangerouslySetInnerHTML={{ __html: article.html }} />
+				<MDXProvider components={mdxComponents}>
+					<MDXRenderer>{article.body}</MDXRenderer>
+				</MDXProvider>
 			</article>
 		</Layout>
 	);
@@ -61,8 +69,8 @@ const BannerImage = styled(Img)(
 
 export const postQuery = graphql`
 	query BlogPostByPath($path: String!) {
-		markdownRemark(frontmatter: { path: { eq: $path } }) {
-			html
+		mdx(frontmatter: { path: { eq: $path } }) {
+			body
 			frontmatter {
 				title
 				author

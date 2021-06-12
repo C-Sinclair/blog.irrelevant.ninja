@@ -8,12 +8,15 @@
 		"@emotion/styled": "^11.3.0",
 		"gatsby": "^3.5.1",
 		"gatsby-image": "^3.5.0",
+		"prism-react-renderer": "^1.2.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-helmet": "^6.1.0",
 		"react-icons": "^4.2.0"
 	},
 	"devDependencies": {
+		"@mdx-js/mdx": "^1.6.22",
+		"@mdx-js/react": "^1.6.22",
 		"eslint": "^7.28.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-jsx-a11y": "^6.4.1",
@@ -23,6 +26,7 @@
 		"eslint-plugin-simple-import-sort": "^7.0.0",
 		"gatsby-plugin-catch-links": "^3.5.0",
 		"gatsby-plugin-manifest": "^3.5.0",
+		"gatsby-plugin-mdx": "^2.7.1",
 		"gatsby-plugin-netlify": "^3.5.0",
 		"gatsby-plugin-offline": "^4.5.1",
 		"gatsby-plugin-react-helmet": "^4.5.0",
@@ -31,7 +35,6 @@
 		"gatsby-plugin-sharp": "^3.5.0",
 		"gatsby-remark-images": "^5.2.1",
 		"gatsby-source-filesystem": "^3.5.0",
-		"gatsby-transformer-remark": "^4.2.0",
 		"gatsby-transformer-sharp": "^3.5.0",
 		"prettier": "^2.3.0"
 	},

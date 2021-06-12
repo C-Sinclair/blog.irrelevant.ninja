@@ -7,7 +7,7 @@ import { css } from '@emotion/react';
 
 const query = graphql`
 	query ArticleListQuery {
-		allMarkdownRemark {
+		allMdx {
 			edges {
 				node {
 					id
@@ -36,7 +36,7 @@ export const Articles = ({ short = false }) => {
 			query={query}
 			render={data => (
 				<Ul short={short}>
-					{data.allMarkdownRemark.edges
+					{data.allMdx.edges
 						.map(article => article.node)
 						.filter(({ frontmatter: { tags } }) =>
 							selectedTags?.length > 0 ? selectedTags.reduce((a, t) => (tags?.includes(t) ? true : a), false) : true,

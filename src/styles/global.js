@@ -107,7 +107,7 @@ export const globalStyles = css`
 	}
 
 	pre {
-		background: ${dark};
+		padding: 0;
 	}
 
 	code {
@@ -117,5 +117,10 @@ export const globalStyles = css`
 
 	li {
 		color: #fff;
+	}
+
+	.prism-code {
+		padding: 30px 30px 10px 30px;
+		border-radius: 4px;
 	}
 `;

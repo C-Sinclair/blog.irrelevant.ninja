@@ -10,7 +10,7 @@ export const Tags = () => {
 	const [open, setOpen] = useState(false);
 	const data = useStaticQuery(graphql`
 		query AllTagsQuery {
-			allMarkdownRemark {
+			allMdx {
 				group(field: frontmatter___tags) {
 					tag: fieldValue
 					totalCount
@@ -18,7 +18,7 @@ export const Tags = () => {
 			}
 		}
 	`);
-	const tags = data.allMarkdownRemark.group.sort((a, b) => (a.totalCount > b.totalCount ? -1 : 1));
+	const tags = data.allMdx.group.sort((a, b) => (a.totalCount > b.totalCount ? -1 : 1));
 	const { selectedTags, selectTag } = useTags();
 
 	const handleClick = tag => () => selectTag(tag);

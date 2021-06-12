@@ -1,10 +1,10 @@
-const path = require('path')
+const path = require('path');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-	const { createPage } = actions
+	const { createPage } = actions;
 	const result = await graphql(`
 		{
-			allMarkdownRemark {
+			allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
 				edges {
 					node {
 						id
@@ -20,19 +20,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 				}
 			}
 		}
-	`)
+	`);
 
 	if (result.errors) {
-		reporter.panicOnBuild(`Error while running GraphQL query.`)
-		return
+		reporter.panicOnBuild(`Error while running GraphQL query.`);
+		return;
 	}
 
-	const articleTemplate = path.resolve('src/layouts/article.jsx')
+	const articleTemplate = path.resolve('src/layouts/article.jsx');
 
-	result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+	result.data.allMdx.edges.forEach(({ node }) => {
 		createPage({
 			path: node.frontmatter.path,
-			component: articleTemplate
-		})
-	})
-}
+			component: articleTemplate,
+		});
+	});
+};

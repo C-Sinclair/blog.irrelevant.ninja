@@ -123,7 +123,9 @@ const Nav = styled.nav(
 
 			.profile-container,
 			footer {
-				${hide};
+				opacity: 0;
+				width: 0;
+				visibility: hidden;
 			}
 
 			.content {
@@ -140,8 +142,3 @@ const Nav = styled.nav(
 		}
 	`,
 );
-
-const hide = css`
-	opacity: 0;
-	width: 0;
-`;
