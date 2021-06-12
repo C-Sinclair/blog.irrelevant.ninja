@@ -7,6 +7,7 @@ author: 'Conor Sinclair'
 featuredImage: ../images/matt-botsford-OKLqGsCT8qs-unsplash.jpg
 tags: ['Podcast', 'XML', 'S3', 'AWS']
 emoji: '🎧'
+language: XML
 ---
 
 Despite its popularity, the technology which drives the world of podcasting is surprisingly archaic. Although it is true that there are paid services which abstract the nitty gritty of what is actually happening away from _you_, the podcast releaser. I'm sure there are many DIY-minded content producers who would prefer, like me, to go it alone and see the release of their product from start to finish (or just want to do it on the cheap and not pay a third-party service when you don't need to).

@@ -9,17 +9,20 @@ import { MDXProvider } from '@mdx-js/react';
 import Code from '../components/Code';
 import format from 'date-fns/format';
 
-const mdxComponents = {
-	code: Code,
-};
-
 export default function Template({ data }) {
 	const article = data.mdx;
 	const {
-		frontmatter: { title, date, featuredImage, emoji },
+		frontmatter: { title, date, featuredImage, emoji, language },
 	} = article;
 
 	const formattedDate = useMemo(() => format(new Date(date), 'do MMMM yyyy'), [date]);
+
+	const mdxComponents = useMemo(
+		() => ({
+			code: props => <Code {...props} language={language} />,
+		}),
+		[],
+	);
 
 	return (
 		<Layout article>
@@ -76,6 +79,7 @@ export const postQuery = graphql`
 				author
 				date
 				emoji
+				language
 				featuredImage {
 					childImageSharp {
 						fluid(maxWidth: 800) {
