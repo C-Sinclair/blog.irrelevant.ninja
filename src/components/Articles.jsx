@@ -3,6 +3,7 @@ import { navigate, StaticQuery, graphql } from 'gatsby';
 import { useTags } from '../hooks';
 import styled from '@emotion/styled';
 import { neonShadow } from '../styles';
+import { css } from '@emotion/react';
 
 const query = graphql`
 	query ArticleListQuery {
@@ -43,14 +44,14 @@ export const Articles = ({ short = false }) => {
 						.map(({ frontmatter, id, excerpt }) => {
 							const { path, title, emoji } = frontmatter;
 							return (
-								<Li onClick={handleClick(path)} key={id}>
-									<IconPanel>
-										<Emoji>{emoji}</Emoji>
-									</IconPanel>
-									<TextContainer>
+								<Li onClick={handleClick(path)} key={`article-${id}`} data-short={short}>
+									<div className='icon-panel'>
+										<span>{emoji}</span>
+									</div>
+									<div className='text'>
 										<h4>{title}</h4>
-										{!short && <p>{excerpt}</p>}
-									</TextContainer>
+										<p>{excerpt}</p>
+									</div>
 								</Li>
 							);
 						})}
@@ -64,23 +65,40 @@ const Ul = styled.ul`
 	padding: 0 25px;
 `;
 
-const IconPanel = styled.div`
-	margin-right: 20px;
-	display: flex;
-	justify-content: flex-start;
-`;
+const Li = styled.li(
+	({ theme }) => css`
+		list-style: none;
+		cursor: pointer;
+		display: flex;
+		border-radius: 8px;
+		border: 1px solid ${theme.palette.gold}99;
+		padding: 10px;
+		background-color: ${theme.palette.dark}99;
+		height: auto;
+		max-height: 400px;
+		overflow-y: hidden;
+		transition: max-height 0.4s ease;
 
-const Emoji = styled.span``;
-
-const Li = styled.li`
-	list-style: none;
-	cursor: pointer;
-	display: flex;
-	&:hover {
-		div:first-child span {
-			${neonShadow};
+		.icon-panel {
+			margin-right: 20px;
+			display: flex;
+			justify-content: flex-start;
 		}
-	}
-`;
 
-const TextContainer = styled.div``;
+		&:hover {
+			border-color: ${theme.palette.gold};
+			background-color: ${theme.palette.dark};
+
+			div:first-child span {
+				${neonShadow};
+			}
+		}
+
+		&[data-short='true'] {
+			max-height: 45px;
+			&:hover {
+				max-height: 400px;
+			}
+		}
+	`,
+);

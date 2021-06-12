@@ -5,7 +5,7 @@ import { TagContext } from '../hooks';
 import styled from '@emotion/styled';
 import { useSidebar } from '../hooks/useSidebar';
 
-export const Layout = ({ children, tags = false }) => {
+export const Layout = ({ children, tags = false, article = false }) => {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -22,7 +22,9 @@ export const Layout = ({ children, tags = false }) => {
 	return (
 		<TagContext.Provider value={{ selectedTags, setSelectedTags }}>
 			<Root data-sidebar-open={sidebarOpen}>
-				<Sidebar title={data.site.siteMetadata.title}>{tags && <Tags />}</Sidebar>
+				<Sidebar title={data.site.siteMetadata.title} article={article}>
+					{tags && <Tags />}
+				</Sidebar>
 				<main>{children}</main>
 			</Root>
 		</TagContext.Provider>
@@ -31,7 +33,7 @@ export const Layout = ({ children, tags = false }) => {
 
 const Root = styled.div`
 	display: flex;
-	--sidebar-width: 0;
+	--sidebar-width: 0px;
 
 	&[data-sidebar-open='true'] {
 		--sidebar-width: 300px;

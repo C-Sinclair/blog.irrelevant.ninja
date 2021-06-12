@@ -5,6 +5,7 @@ import format from 'date-fns/format';
 import { Layout, SEO } from '../components';
 import styled from '@emotion/styled';
 import { VscCalendar } from 'react-icons/vsc';
+import { css } from '@emotion/react';
 
 export default function Template({ data }) {
 	const article = data.markdownRemark;
@@ -15,7 +16,7 @@ export default function Template({ data }) {
 	const formattedDate = useMemo(() => format(new Date(date), 'do MMMM yyyy'), [date]);
 
 	return (
-		<Layout>
+		<Layout article>
 			<SEO title='Articles' />
 			<article>
 				<header>
@@ -51,9 +52,9 @@ const BannerImage = styled(Img)(
   ${
 		fullWidth &&
 		`
-    margin-left: -20px;
-    width: calc(100% + 40px);
-  `
+			margin-left: -30px;
+			width: calc(100% + 60px);
+		`
 	}
 `,
 );

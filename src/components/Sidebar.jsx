@@ -4,15 +4,15 @@ import { BiCaretLeftCircle as CaretIcon } from 'react-icons/bi';
 import { Link } from 'gatsby';
 import { Profile } from '.';
 import styled from '@emotion/styled';
-import { css, keyframes } from '@emotion/react';
+import { css } from '@emotion/react';
 import { useSidebar } from '../hooks/useSidebar';
 import { ifEnter } from '../util/events';
 
-export const Sidebar = ({ children }) => {
+export const Sidebar = ({ children, article = false }) => {
 	const [open, toggleOpen] = useSidebar();
 	return (
 		<Nav aria-hidden={!open}>
-			<Link to='/' className='home-link'>
+			<Link to='/' className='home-link' data-article={article}>
 				<HomeIcon size={20} />
 			</Link>
 			<CaretIcon
@@ -93,7 +93,8 @@ const Nav = styled.nav(
 			}
 
 			& > * {
-				transition: opacity 0.2s, transform 0.2s;
+				opacity: 1;
+				transition: opacity 0.2s;
 			}
 		}
 
@@ -111,6 +112,7 @@ const Nav = styled.nav(
 			.nav-toggle {
 				transform: rotate(0deg);
 				right: -14px;
+				z-index: 1000;
 			}
 		}
 
@@ -126,6 +128,10 @@ const Nav = styled.nav(
 
 			.content {
 				transform: translateX(-500px);
+			}
+
+			.home-link[data-article='true'] {
+				left: -25px;
 			}
 		}
 
