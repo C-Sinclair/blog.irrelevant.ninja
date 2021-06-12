@@ -46,13 +46,11 @@ export const globalStyles = css`
 	}
 
 	main {
-		width: 70vw;
+		width: calc(100vw - var(--sidebar-width));
 		height: 100vh;
 		overflow-y: scroll;
 		background: ${darkest};
-		@media (max-width: 950px) {
-			width: calc(100vw - 100px);
-		}
+		transition: width 0.2s;
 	}
 
 	header {
