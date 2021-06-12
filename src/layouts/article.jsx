@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import format from 'date-fns/format'
@@ -15,7 +15,8 @@ export default function Template({ data }) {
     emoji
   } } = article
 
-  const formattedDate = format(new Date(date), "do MMMM yyyy")
+  
+  const formattedDate = useMemo(() => format(new Date(date), "do MMMM yyyy"), [date])
 
   return (
     <Layout>

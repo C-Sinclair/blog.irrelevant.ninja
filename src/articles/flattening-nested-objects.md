@@ -1,6 +1,6 @@
 ---
 path: '/articles/flattening-nested-objects'
-date: '09-24-2020'
+date: '09/24/2020'
 shortTitle: 'Flattening Nested Objects'
 title: 'Flattening Nested Objects'
 author: 'Conor Sinclair'

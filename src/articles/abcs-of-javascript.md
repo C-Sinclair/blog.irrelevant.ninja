@@ -1,6 +1,6 @@
 ---
 path: '/articles/abcs-of-javascript'
-date: '03-24-2020'
+date: '03/24/2020'
 shortTitle: 'ABCs of Javascript'
 title: 'ABCs of Javascript - Apply, Bind & Call'
 author: 'Conor Sinclair'

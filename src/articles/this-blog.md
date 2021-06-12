@@ -1,6 +1,6 @@
 ---
 path: '/articles/creation'
-date: '05-07-2019'
+date: '05/07/2019'
 title: 'Building a Gatsby blog'
 shortTitle: 'Creation'
 author: 'Conor Sinclair'

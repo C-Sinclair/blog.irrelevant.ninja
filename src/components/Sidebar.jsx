@@ -7,7 +7,7 @@ import styled from '@emotion/styled'
 export const Sidebar = ({ children }) => {
   return (
     <Nav>
-      <Home>
+      <Home to='/'>
         <HomeIcon size={20} />
       </Home>
       <ProfileContainer href="https://c.sinclair.software">

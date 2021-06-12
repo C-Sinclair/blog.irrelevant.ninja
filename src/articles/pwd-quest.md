@@ -1,6 +1,6 @@
 ---
 path: '/articles/mighty-pwd-quest'
-date: '09-25-2020'
+date: '09/25/2020'
 title: 'The Mighty Quest For PWD'
 shortTitle: 'Quest For PWD'
 author: 'Conor Sinclair'

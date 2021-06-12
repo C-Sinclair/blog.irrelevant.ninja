@@ -1,6 +1,6 @@
 ---
 path: '/articles/damn-you-pango'
-date: '03-24-2021'
+date: '03/24/2021'
 title: 'Damn You Pango'
 shortTitle: 'Damn You Pango'
 author: 'Conor Sinclair'

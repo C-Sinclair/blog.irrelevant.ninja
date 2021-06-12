@@ -1,6 +1,6 @@
 ---
 path: '/articles/async-array-reduce'
-date: '09-22-2020'
+date: '09/22/2020'
 shortTitle: 'Async Array Reduce'
 title: 'Asynchronous Array Reduce'
 author: 'Conor Sinclair'

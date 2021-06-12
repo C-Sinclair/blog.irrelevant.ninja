@@ -1,6 +1,6 @@
 ---
 path: '/articles/fucking-salesforce'
-date: '04-24-2020'
+date: '04/24/2020'
 shortTitle: 'Fucking Salesforce'
 title: 'Fucking Salesforce'
 author: 'Conor Sinclair'

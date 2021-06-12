@@ -2,7 +2,7 @@
 path: '/articles/farewell-xmonad'
 title: 'Farewell for now Xmonad'
 shortTitle: 'Farewell for now Xmonad'
-date: '03-27-2021'
+date: '03/27/2021'
 author: 'Conor Sinclair'
 featuredImage: ../images/imani-vDQ-e3RtaoE-unsplash.jpg
 tags: ['Xmonad', 'Haskell']

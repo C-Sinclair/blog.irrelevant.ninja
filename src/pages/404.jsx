@@ -11,7 +11,7 @@ const NotFoundPage = () => (
 			<p>This route does not exist</p>
 			<div>
 				<p>There's plenty more content if you click here though!</p>
-				<Link>Show me the money 💸</Link>
+				<Link to='/'>Show me the money 💸</Link>
 			</div>
 		</Container>
 	</Layout>

@@ -1,6 +1,6 @@
 ---
 path: '/articles/ssh-me-to-github'
-date: '03-22-2020'
+date: '03/22/2020'
 shortTitle: 'SSH me to Github'
 title: 'SSH me to Github'
 author: 'Conor Sinclair'

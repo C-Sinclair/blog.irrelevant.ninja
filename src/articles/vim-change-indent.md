@@ -1,6 +1,6 @@
 ---
 path: '/articles/quick-vim-indent-change'
-date: '09-24-2020'
+date: '09/24/2020'
 title: 'Quick Vim Indentation Change'
 shortTitle: 'Quick Vim Indent Change'
 author: 'Conor Sinclair'

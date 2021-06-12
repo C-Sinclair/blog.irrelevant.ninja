@@ -1,6 +1,6 @@
 ---
 path: '/articles/useless-usecallback'
-date: '02-01-2021'
+date: '02/01/2021'
 title: 'useLess useCallback'
 shortTitle: 'useLess useCallback'
 author: 'Conor Sinclair'

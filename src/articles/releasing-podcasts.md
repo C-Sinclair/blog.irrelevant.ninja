@@ -1,6 +1,6 @@
 ---
 path: '/articles/podcasting'
-date: '07-09-2019'
+date: '07/09/2019'
 shortTitle: 'Podcasting'
 title: 'How to release a podcast'
 author: 'Conor Sinclair'
