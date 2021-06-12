@@ -65,24 +65,23 @@ const Card = styled.div`
 `;
 
 const Tag = styled.div`
-  display: flex;
-  font-size: 0.8em;
-  background: ${({ theme, selected }) => (selected ? 'green' : theme.palette.dark)};
-  font-weight: 500
-  align-items: center;
-  height: 30px;
-  border-radius: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  cursor: pointer;
-  margin-bottom: 5px;
-  margin-right: 5px;
-  &:hover {
-    background: ${({ theme }) => theme.palette.lightest};
-  }
-  p {
-
-  }
+	display: flex;
+	font-size: 0.8em;
+	background: ${({ theme, selected }) => (selected ? 'green' : theme.palette.dark)};
+	font-weight: 500;
+	align-items: center;
+	height: 30px;
+	border-radius: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	&:hover {
+		background: ${({ theme }) => theme.palette.lightest};
+	}
+	p {
+	}
 `;
 
 const Count = styled.div`

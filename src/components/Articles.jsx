@@ -7,7 +7,7 @@ import { css } from '@emotion/react';
 
 const query = graphql`
 	query ArticleListQuery {
-		allMdx {
+		allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
 			edges {
 				node {
 					id
