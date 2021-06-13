@@ -7,7 +7,7 @@ import { useSidebar } from '../hooks/useSidebar';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from '../styles';
 
-export const Layout = ({ children, tags = false, article = false }) => {
+export const Layout = ({ children, tags = false, article = false, className }) => {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -24,7 +24,7 @@ export const Layout = ({ children, tags = false, article = false }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<TagContext.Provider value={{ selectedTags, setSelectedTags }}>
-				<Root data-sidebar-open={sidebarOpen}>
+				<Root data-sidebar-open={sidebarOpen} className={className}>
 					<Sidebar title={data.site.siteMetadata.title} article={article}>
 						{tags && <Tags />}
 					</Sidebar>

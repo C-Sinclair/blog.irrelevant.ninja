@@ -4,6 +4,7 @@ import { useTags } from '../hooks';
 import styled from '@emotion/styled';
 import { neonShadow } from '../styles';
 import { css } from '@emotion/react';
+import { ifEnter } from '../util/events';
 
 const query = graphql`
 	query ArticleListQuery {
@@ -44,7 +45,12 @@ export const Articles = ({ short = false }) => {
 						.map(({ frontmatter, id, excerpt }) => {
 							const { path, title, emoji } = frontmatter;
 							return (
-								<Li onClick={handleClick(path)} key={`article-${id}`} data-short={short}>
+								<Li
+									key={`article-${id}`}
+									onClick={handleClick(path)}
+									onKeyPress={ifEnter(handleClick(path))}
+									data-short={short}
+								>
 									<div className='icon-panel'>
 										<span>{emoji}</span>
 									</div>
@@ -85,7 +91,8 @@ const Li = styled.li(
 			justify-content: flex-start;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
 			border-color: ${theme.palette.gold};
 			background-color: ${theme.palette.dark};
 
@@ -96,7 +103,8 @@ const Li = styled.li(
 
 		&[data-short='true'] {
 			max-height: 45px;
-			&:hover {
+			&:hover,
+			&:focus {
 				max-height: 400px;
 			}
 		}
